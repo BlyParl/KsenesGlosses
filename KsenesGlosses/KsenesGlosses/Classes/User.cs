@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace KsenesGlosses
 {
     
-    //@VP
+    /// <summary>
+    /// Class type of a User. Used to describe a user using this application.
+    /// </summary>
     class User
     {
         public int user_id { get; private set; }
@@ -16,9 +18,14 @@ namespace KsenesGlosses
         public String user_name { get; set; }
         public String email_address { get; set; }
 
-        //will contain list of available statistics
+        /// <summary>
+        /// will contain list of available statistics
+        /// </summary>
         public enum statistic { }
-        //will contain list of available settings
+
+        /// <summary>
+        /// will contain list of available settings
+        /// </summary>
         public enum setting { }
 
         //default constructor
@@ -51,22 +58,35 @@ namespace KsenesGlosses
                    email_address == user.email_address;
         }
 
-        //returns a User searching with username in Database
+        /// <summary>
+        /// returns a User searching with username in Database
+        /// </summary>
+        /// <param name="user_name"></param>
+        /// <returns>Type User from Database</returns>
         public static User getUserFromDB(String user_name)
         {
             //NOT FINISHED
             return null;
         }
 
-        //returns true if username and password exist in database
+        /// <summary>
+        /// Returns true if username and password exist in database.
+        /// This method will not encrypt the password, it should be done using encryptPassword(String password).
+        /// </summary>
+        /// <param name="user_name"></param>
+        /// <param name="encryptedPassword"></param>
+        /// <returns></returns>
         public static bool checkCredentials(String user_name, String encryptedPassword)
         {
             //NOT FINISHED
-            //This method will not encrypt the password, it should be done using encryptPassword(String password)
             return false;
         }
 
-        //encrypts a password string and returns its hashed value
+        /// <summary>
+        /// Encrypts a password string and returns its hashed value.
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static String encryptPassword(String password)
         {
             //NOT FINISHED
@@ -74,7 +94,16 @@ namespace KsenesGlosses
             return null;
         }
 
-        //creates a new user in database
+        
+
+        /// <summary>
+        /// Creates a new user in database
+        /// </summary>
+        /// <param name="first_name"></param>
+        /// <param name="last_name"></param>
+        /// <param name="user_name"></param>
+        /// <param name="email_address"></param>
+        /// <param name="encryptedPassword"></param>
         public static void createUserInDB(String first_name, String last_name, String user_name, String email_address, String encryptedPassword)
         {
             //NOT FINISHED
@@ -82,14 +111,26 @@ namespace KsenesGlosses
             //This method might become bool or returning a database status code in future if we think it's better to prevent missing errors
         }
 
-        //returns true if a username exists in database and is being already used
+       
+
+        /// <summary>
+        /// Returns true if a username exists in database and is already being used.
+        /// </summary>
+        /// <param name="user_name"></param>
+        /// <returns></returns>
         public static bool userExists(String user_name)
         {
             //NOT FINISHED
             return false;
         }
 
-        //changes with new value a selected setting of a user (The changes are made both in Database and this)
+        
+
+        /// <summary>
+        /// Changes a selected setting of a user with its new Value (The changes are made both in Database and this object)
+        /// </summary>
+        /// <param name="setting"></param>
+        /// <param name="newValue"></param>
         public void changeUserSetting(String setting, String newValue)
         {
             //NOT FINISHED
@@ -97,13 +138,20 @@ namespace KsenesGlosses
             //instead of String statistic, you might make this method with enum setting
         }
 
-        //returns one's user statistic by a list of options
+
+
+        /// <summary>
+        /// Returns one's user statistic by a list of options
+        /// </summary>
+        /// <param name="statistic"></param>
+        /// <returns></returns>
         public float getStatistic(String statistic)
         {
             //NOT FINISHED
             //instead of String statistic, you might make this method with enum statistic
             return -1f;
         }
+
 
 
 
