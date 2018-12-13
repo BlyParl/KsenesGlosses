@@ -16,7 +16,7 @@ namespace KsenesGlosses
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TestVoiceRec());
+            Application.Run(new Login());
         }
     }
 }
