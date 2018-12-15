@@ -36,8 +36,6 @@
             this.Register = new System.Windows.Forms.Button();
             this.Login_with = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel_email = new System.Windows.Forms.Panel();
-            this.email = new System.Windows.Forms.TextBox();
             this.Border = new System.Windows.Forms.Panel();
             this.Minimize = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,7 +44,6 @@
             this.Gmail = new System.Windows.Forms.PictureBox();
             this.Facebook = new System.Windows.Forms.PictureBox();
             this.Login_Logo = new System.Windows.Forms.PictureBox();
-            this.img_email = new System.Windows.Forms.PictureBox();
             this.img_password = new System.Windows.Forms.PictureBox();
             this.img_username = new System.Windows.Forms.PictureBox();
             this.Border.SuspendLayout();
@@ -57,7 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Gmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Facebook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Login_Logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_username)).BeginInit();
             this.SuspendLayout();
@@ -114,7 +110,7 @@
             this.Sing_in.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Sing_in.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Sing_in.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.Sing_in.Location = new System.Drawing.Point(81, 392);
+            this.Sing_in.Location = new System.Drawing.Point(80, 331);
             this.Sing_in.Name = "Sing_in";
             this.Sing_in.Size = new System.Drawing.Size(250, 41);
             this.Sing_in.TabIndex = 4;
@@ -127,7 +123,7 @@
             this.Register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Register.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Register.ForeColor = System.Drawing.Color.White;
-            this.Register.Location = new System.Drawing.Point(81, 452);
+            this.Register.Location = new System.Drawing.Point(81, 401);
             this.Register.Name = "Register";
             this.Register.Size = new System.Drawing.Size(250, 41);
             this.Register.TabIndex = 4;
@@ -140,7 +136,7 @@
             this.Login_with.AutoSize = true;
             this.Login_with.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Login_with.ForeColor = System.Drawing.Color.White;
-            this.Login_with.Location = new System.Drawing.Point(169, 515);
+            this.Login_with.Location = new System.Drawing.Point(162, 473);
             this.Login_with.Name = "Login_with";
             this.Login_with.Size = new System.Drawing.Size(89, 19);
             this.Login_with.TabIndex = 6;
@@ -152,35 +148,12 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(121, 635);
+            this.button1.Location = new System.Drawing.Point(119, 619);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(177, 41);
             this.button1.TabIndex = 4;
             this.button1.Text = "Forgot Password";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panel_email
-            // 
-            this.panel_email.BackColor = System.Drawing.Color.White;
-            this.panel_email.Location = new System.Drawing.Point(81, 362);
-            this.panel_email.Name = "panel_email";
-            this.panel_email.Size = new System.Drawing.Size(250, 5);
-            this.panel_email.TabIndex = 2;
-            // 
-            // email
-            // 
-            this.email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.email.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.email.ForeColor = System.Drawing.Color.White;
-            this.email.HideSelection = false;
-            this.email.Location = new System.Drawing.Point(130, 334);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(201, 22);
-            this.email.TabIndex = 1;
-            this.email.TabStop = false;
-            this.email.Text = "email";
-            this.email.Click += new System.EventHandler(this.email_Click);
             // 
             // Border
             // 
@@ -228,7 +201,7 @@
             // Twitter
             // 
             this.Twitter.Image = global::KsenesGlosses.Properties.Resources.twitter_blue;
-            this.Twitter.Location = new System.Drawing.Point(267, 553);
+            this.Twitter.Location = new System.Drawing.Point(266, 519);
             this.Twitter.Name = "Twitter";
             this.Twitter.Size = new System.Drawing.Size(64, 64);
             this.Twitter.TabIndex = 5;
@@ -239,7 +212,7 @@
             // Gmail
             // 
             this.Gmail.Image = global::KsenesGlosses.Properties.Resources.gmail_blue;
-            this.Gmail.Location = new System.Drawing.Point(176, 553);
+            this.Gmail.Location = new System.Drawing.Point(175, 519);
             this.Gmail.Name = "Gmail";
             this.Gmail.Size = new System.Drawing.Size(64, 64);
             this.Gmail.TabIndex = 5;
@@ -250,7 +223,7 @@
             // Facebook
             // 
             this.Facebook.Image = global::KsenesGlosses.Properties.Resources.facebook_blue;
-            this.Facebook.Location = new System.Drawing.Point(81, 553);
+            this.Facebook.Location = new System.Drawing.Point(80, 519);
             this.Facebook.Name = "Facebook";
             this.Facebook.Size = new System.Drawing.Size(64, 64);
             this.Facebook.TabIndex = 5;
@@ -267,15 +240,6 @@
             this.Login_Logo.Size = new System.Drawing.Size(128, 128);
             this.Login_Logo.TabIndex = 3;
             this.Login_Logo.TabStop = false;
-            // 
-            // img_email
-            // 
-            this.img_email.Image = global::KsenesGlosses.Properties.Resources.email;
-            this.img_email.Location = new System.Drawing.Point(81, 324);
-            this.img_email.Name = "img_email";
-            this.img_email.Size = new System.Drawing.Size(32, 32);
-            this.img_email.TabIndex = 0;
-            this.img_email.TabStop = false;
             // 
             // img_password
             // 
@@ -311,13 +275,10 @@
             this.Controls.Add(this.Register);
             this.Controls.Add(this.Sing_in);
             this.Controls.Add(this.Login_Logo);
-            this.Controls.Add(this.panel_email);
             this.Controls.Add(this.panel_password);
             this.Controls.Add(this.panel_username);
-            this.Controls.Add(this.email);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.Username);
-            this.Controls.Add(this.img_email);
             this.Controls.Add(this.img_password);
             this.Controls.Add(this.img_username);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -332,7 +293,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Gmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Facebook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Login_Logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_email)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_password)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_username)).EndInit();
             this.ResumeLayout(false);
@@ -358,9 +318,6 @@
         private System.Windows.Forms.PictureBox Twitter;
         private System.Windows.Forms.PictureBox Close;
         private System.Windows.Forms.PictureBox Minimize;
-        private System.Windows.Forms.Panel panel_email;
-        private System.Windows.Forms.TextBox email;
-        private System.Windows.Forms.PictureBox img_email;
         private System.Windows.Forms.Panel Border;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

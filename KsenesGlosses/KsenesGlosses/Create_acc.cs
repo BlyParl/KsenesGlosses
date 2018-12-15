@@ -159,6 +159,9 @@ namespace KsenesGlosses
             this.Hide();
             //shows login form
             temp.Show();
+            //new form have the same location
+            temp.Left = this.Left;
+            temp.Top = this.Top;
         }
 
         private void Border_MouseMove(object sender, MouseEventArgs e)

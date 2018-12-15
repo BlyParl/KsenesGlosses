@@ -58,19 +58,6 @@ namespace KsenesGlosses
             img_password.Image = Properties.Resources.password_blue;
         }
 
-        private void email_Click(object sender, EventArgs e)
-        {
-            reset();
-            //change the text to empty when click on the textbox
-            if (email.Text == "email")
-            {
-                email.Text = "";
-            }
-            select(panel_email, email);
-            //change the image to blue version
-            img_email.Image = Properties.Resources.email_blue;
-        }
-
 
         private void Facebook_MouseEnter(object sender, EventArgs e)
         {
@@ -108,12 +95,10 @@ namespace KsenesGlosses
             //reset all the icon to white
             img_username.Image = Properties.Resources.username;
             img_password.Image = Properties.Resources.password;
-            img_email.Image = Properties.Resources.email;
 
             //reset all panels under the texts to white
             panel_username.BackColor = Color.FromArgb(255, 255, 255);
             panel_password.BackColor = Color.FromArgb(255, 255, 255);
-            panel_email.BackColor = Color.FromArgb(255, 255, 255);
 
             //reset the text if it is empty
             if (Username.Text == "")
@@ -124,15 +109,11 @@ namespace KsenesGlosses
             {
                 Password.Text = "Password";
             }
-            if (email.Text == "")
-            {
-                email.Text = "email";
-            }
+            
 
             //reset all text colors to white
             Username.ForeColor = Color.FromArgb(255, 255, 255);
             Password.ForeColor = Color.FromArgb(255, 255, 255);
-            email.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
         public void select(Panel panel, TextBox text)
@@ -160,11 +141,15 @@ namespace KsenesGlosses
 
         private void Register_Click(object sender, EventArgs e)
         {
+            //create a create_acc form 
             Create_acc temp = new Create_acc();
-
+            // hide this form
             this.Hide();
-
+            //show the other form
             temp.Show();
+            //new form have the same location
+            temp.Left = this.Left;
+            temp.Top = this.Top;
 
         }
     }
