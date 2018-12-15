@@ -42,12 +42,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.Border = new System.Windows.Forms.Panel();
+            this.Minimize = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.Close = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.Border.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,7 +67,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(166, 600);
+            this.panel1.Size = new System.Drawing.Size(166, 633);
             this.panel1.TabIndex = 0;
             // 
             // button3
@@ -69,7 +77,7 @@
             this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(0, 343);
+            this.button3.Location = new System.Drawing.Point(3, 267);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(163, 79);
             this.button3.TabIndex = 3;
@@ -85,7 +93,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(0, 225);
+            this.button1.Location = new System.Drawing.Point(3, 182);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 79);
             this.button1.TabIndex = 3;
@@ -101,7 +109,7 @@
             this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(0, 105);
+            this.button2.Location = new System.Drawing.Point(3, 106);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(163, 79);
             this.button2.TabIndex = 2;
@@ -143,9 +151,9 @@
             this.MainPanel.Controls.Add(this.pictureBox1);
             this.MainPanel.Controls.Add(this.pictureBox2);
             this.MainPanel.ForeColor = System.Drawing.Color.Black;
-            this.MainPanel.Location = new System.Drawing.Point(169, 105);
+            this.MainPanel.Location = new System.Drawing.Point(169, 134);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1030, 495);
+            this.MainPanel.Size = new System.Drawing.Size(1030, 499);
             this.MainPanel.TabIndex = 5;
             // 
             // comboBox1
@@ -163,7 +171,6 @@
             this.comboBox1.Size = new System.Drawing.Size(309, 29);
             this.comboBox1.TabIndex = 12;
             this.comboBox1.Tag = "";
-            this.comboBox1.SelectedIndex = 0;
             // 
             // button4
             // 
@@ -229,21 +236,65 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button5.Location = new System.Drawing.Point(600, 20);
+            this.button5.Location = new System.Drawing.Point(600, 54);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(143, 59);
             this.button5.TabIndex = 4;
             this.button5.Text = "Test";
             this.button5.UseVisualStyleBackColor = false;
             // 
+            // Border
+            // 
+            this.Border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(60)))));
+            this.Border.Controls.Add(this.Minimize);
+            this.Border.Controls.Add(this.pictureBox4);
+            this.Border.Controls.Add(this.Close);
+            this.Border.Location = new System.Drawing.Point(0, 0);
+            this.Border.Name = "Border";
+            this.Border.Size = new System.Drawing.Size(1199, 32);
+            this.Border.TabIndex = 6;
+            this.Border.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Border_MouseDown);
+            this.Border.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Border_MouseMove);
+            // 
+            // Minimize
+            // 
+            this.Minimize.Image = global::KsenesGlosses.Properties.Resources.minimize;
+            this.Minimize.Location = new System.Drawing.Point(1135, 0);
+            this.Minimize.Name = "Minimize";
+            this.Minimize.Size = new System.Drawing.Size(32, 32);
+            this.Minimize.TabIndex = 0;
+            this.Minimize.TabStop = false;
+            this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::KsenesGlosses.Properties.Resources.logo;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // Close
+            // 
+            this.Close.Image = global::KsenesGlosses.Properties.Resources.close;
+            this.Close.Location = new System.Drawing.Point(1167, 0);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(32, 32);
+            this.Close.TabIndex = 0;
+            this.Close.TabStop = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1200, 600);
+            this.ClientSize = new System.Drawing.Size(1200, 633);
+            this.Controls.Add(this.Border);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.panel1.ResumeLayout(false);
@@ -253,6 +304,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Border.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Minimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Close)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,5 +327,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Border;
+        private System.Windows.Forms.PictureBox Minimize;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox Close;
     }
 }
