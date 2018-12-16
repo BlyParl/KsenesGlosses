@@ -107,6 +107,7 @@
             this.Password.TabStop = false;
             this.Password.Text = "Password";
             this.Password.Click += new System.EventHandler(this.Password_Click);
+            this.Password.TextChanged += new System.EventHandler(this.Password_TextChanged);
             // 
             // panel_email
             // 
@@ -285,6 +286,7 @@
             this.Sing_up.TabIndex = 5;
             this.Sing_up.Text = "Sing up";
             this.Sing_up.UseVisualStyleBackColor = false;
+            this.Sing_up.Click += new System.EventHandler(this.Sing_up_Click);
             // 
             // Go_back
             // 

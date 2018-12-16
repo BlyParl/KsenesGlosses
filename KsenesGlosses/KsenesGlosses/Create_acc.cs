@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -178,6 +179,94 @@ namespace KsenesGlosses
         {
             //apothikeuei to teleuteo simio pou afise to parathiro
             lastPoint = new Point(e.X, e.Y);
+        }
+
+        /// <summary>
+        /// check every char in pass if it has caps character
+        /// </summary>
+        /// <returns></returns>
+        private bool pass_caps_check()
+        {
+            foreach (char c in Password.Text)
+            {
+                if (char.IsUpper(c))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// pass check constrains for text legth , contain num , contain letters , contain sumbols
+        /// return true if one of the above is not match
+        /// </summary>
+        /// <returns></returns>
+        private bool pass_constraint_check()
+        {
+            int min_len=8;
+            int min_num=2;
+            int min_lett=2;
+            int min_sym=2;
+
+            if(Password.Text.Length < 8)
+            {
+                return true;
+            }
+
+            //Check for Digits, Special Characters and Lower Letters
+            int num_count = 0;
+            int sym_count = 0;
+            int lett_count = 0;
+
+            foreach (char c in Password.Text)
+            {
+                if (char.IsDigit(c))
+                {
+                    num_count++;
+                }
+
+                if (Regex.IsMatch(c.ToString(), @"[!#$%&'()*+,-.:;<=>?@[\\\]{}^_`|~]"))
+                {
+                    sym_count++;
+                }
+
+                if (char.IsLower(c))
+                {
+                    lett_count++;
+                }
+            }
+
+            if (num_count < 2)
+            {
+                return true;
+            }
+            if (sym_count < 2)
+            {
+                return true;
+            }
+            if (lett_count < 2)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void Password_TextChanged(object sender, EventArgs e)
+        {
+            if (pass_caps_check())
+            {
+                Password.Text = "caps";
+            }
+        }
+
+        private void Sing_up_Click(object sender, EventArgs e)
+        {
+            if (pass_constraint_check())
+            {
+                Password.Text = "constraint";
+            }
         }
     }
 }
