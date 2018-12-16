@@ -46,6 +46,7 @@
             this.Minimize = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Close = new System.Windows.Forms.PictureBox();
+            this.Logout_button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.MainPanel.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Logout_button);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button2);
@@ -285,6 +287,23 @@
             this.Close.TabStop = false;
             this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
+            // Logout_button
+            // 
+            this.Logout_button.FlatAppearance.BorderSize = 0;
+            this.Logout_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Logout_button.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout_button.ForeColor = System.Drawing.Color.White;
+            this.Logout_button.Image = global::KsenesGlosses.Properties.Resources.exit2;
+            this.Logout_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Logout_button.Location = new System.Drawing.Point(0, 556);
+            this.Logout_button.Name = "Logout_button";
+            this.Logout_button.Size = new System.Drawing.Size(166, 74);
+            this.Logout_button.TabIndex = 3;
+            this.Logout_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Logout_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Logout_button.UseVisualStyleBackColor = true;
+            this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -331,5 +350,6 @@
         private System.Windows.Forms.PictureBox Minimize;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox Close;
+        private System.Windows.Forms.Button Logout_button;
     }
 }

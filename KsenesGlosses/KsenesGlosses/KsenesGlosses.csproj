@@ -206,6 +206,7 @@
     <None Include="Resources\username_blue.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\exit2.png" />
     <Content Include="Resources\greece_120px.png" />
     <Content Include="Resources\lock.png" />
     <Content Include="Resources\rsz_envelope %281%29.png" />

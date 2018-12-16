@@ -117,6 +117,7 @@
             this.Sing_in.TabIndex = 4;
             this.Sing_in.Text = "Sing In";
             this.Sing_in.UseVisualStyleBackColor = false;
+            this.Sing_in.Click += new System.EventHandler(this.Sing_in_Click);
             // 
             // Register
             // 

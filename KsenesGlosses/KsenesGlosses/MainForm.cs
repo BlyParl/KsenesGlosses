@@ -225,5 +225,15 @@ namespace KsenesGlosses
             //apothikeuei to teleuteo simio pou afise to parathiro
             lastPoint = new Point(e.X, e.Y);
         }
+
+        private void Logout_button_Click(object sender, EventArgs e)
+        {
+            //create login item
+            Login temp = new Login();
+            //hide create form
+            this.Hide();
+            //shows login form
+            temp.Show();
+        }
     }
 }

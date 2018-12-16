@@ -173,5 +173,15 @@ namespace KsenesGlosses
         {
             pass_caps_check();
         }
+
+        private void Sing_in_Click(object sender, EventArgs e)
+        {
+            //create a create_acc form 
+            MainForm temp = new MainForm();
+            // hide this form
+            this.Hide();
+            //show the other form
+            temp.Show();
+        }
     }
 }

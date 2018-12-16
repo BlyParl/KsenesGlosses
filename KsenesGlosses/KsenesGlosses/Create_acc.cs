@@ -209,7 +209,7 @@ namespace KsenesGlosses
             int min_lett=2;
             int min_sym=2;
 
-            if(Password.Text.Length < 8)
+            if(Password.Text.Length < min_len)
             {
                 return true;
             }
@@ -237,15 +237,15 @@ namespace KsenesGlosses
                 }
             }
 
-            if (num_count < 2)
+            if (num_count < min_num)
             {
                 return true;
             }
-            if (sym_count < 2)
+            if (sym_count < min_sym)
             {
                 return true;
             }
-            if (lett_count < 2)
+            if (lett_count < min_lett)
             {
                 return true;
             }
