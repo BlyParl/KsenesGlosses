@@ -95,6 +95,7 @@
             this.Password.TabStop = false;
             this.Password.Text = "Password";
             this.Password.Click += new System.EventHandler(this.Password_Click);
+            this.Password.TextChanged += new System.EventHandler(this.Password_TextChanged);
             // 
             // panel_password
             // 

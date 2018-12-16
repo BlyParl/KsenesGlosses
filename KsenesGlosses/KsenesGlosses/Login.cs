@@ -152,5 +152,26 @@ namespace KsenesGlosses
             temp.Top = this.Top;
 
         }
+
+        /// <summary>
+        /// check every char in pass if it has caps character
+        /// </summary>
+        /// <returns></returns>
+        private bool pass_caps_check()
+        {
+            foreach (char c in Password.Text)
+            {
+                if (char.IsUpper(c))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void Password_TextChanged(object sender, EventArgs e)
+        {
+            pass_caps_check();
+        }
     }
 }
