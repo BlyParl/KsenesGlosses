@@ -107,6 +107,7 @@
     <Compile Include="VocalTestForm.Designer.cs">
       <DependentUpon>VocalTestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VocLearningDataSet.Designer.cs" />
     <EmbeddedResource Include="Create_acc.resx">
       <DependentUpon>Create_acc.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +154,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="VocLearningDataSet.xsc">
+      <DependentUpon>VocLearningDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VocLearningDataSet.xsd" />
+    <None Include="VocLearningDataSet.xss">
+      <DependentUpon>VocLearningDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
