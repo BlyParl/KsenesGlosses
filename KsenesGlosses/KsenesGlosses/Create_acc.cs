@@ -253,12 +253,26 @@ namespace KsenesGlosses
             return false;
         }
 
+        /// <summary>
+        /// change the password text that the user types in *
+        /// and check for caps on the text
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Password_TextChanged(object sender, EventArgs e)
         {
-            if (pass_caps_check())
+            if (Password.Text == "Password")
             {
-                Password.Text = "caps";
+                Password.PasswordChar = '\0';
             }
+            else
+            {
+                Password.PasswordChar = '*';
+                if (pass_caps_check())
+                {
+                    Password.Text = "caps";
+                }
+            } 
         }
 
         private void Sing_up_Click(object sender, EventArgs e)
