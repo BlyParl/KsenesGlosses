@@ -16,5 +16,34 @@ namespace KsenesGlosses
         {
             InitializeComponent();
         }
+        
+        // gia na kinite to frame
+        Point lastPoint;
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Border_MouseMove(object sender, MouseEventArgs e)
+        {
+            //metakinisi tou frame
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void Border_MouseDown(object sender, MouseEventArgs e)
+        {
+            //apothikeuei to teleuteo simio pou afise to parathiro
+            lastPoint = new Point(e.X, e.Y);
+        }
     }
 }

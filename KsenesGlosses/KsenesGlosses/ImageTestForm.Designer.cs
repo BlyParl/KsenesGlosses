@@ -33,7 +33,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.Exit_test = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -85,18 +85,19 @@
             this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // Exit_test
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button5.Location = new System.Drawing.Point(510, 289);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 30);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Previous";
-            this.button5.UseVisualStyleBackColor = false;
+            this.Exit_test.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.Exit_test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Exit_test.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Exit_test.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.Exit_test.Location = new System.Drawing.Point(700, 420);
+            this.Exit_test.Name = "Exit_test";
+            this.Exit_test.Size = new System.Drawing.Size(100, 30);
+            this.Exit_test.TabIndex = 7;
+            this.Exit_test.Text = "Exit Test";
+            this.Exit_test.UseVisualStyleBackColor = false;
+            this.Exit_test.Click += new System.EventHandler(this.Exit_test_Click);
             // 
             // ImageTestForm
             // 
@@ -105,7 +106,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.Exit_test);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -127,6 +128,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button Exit_test;
     }
 }

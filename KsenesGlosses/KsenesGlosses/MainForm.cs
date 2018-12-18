@@ -235,5 +235,24 @@ namespace KsenesGlosses
             //shows login form
             temp.Show();
         }
+
+        private void User_Settings_Click(object sender, EventArgs e)
+        {
+            //create User Settings item
+            User_Settings temp = new User_Settings();
+            //hide main form
+            this.Hide();
+            //shows User Settings form
+            temp.Show();
+        }
+
+        public void Show_main_panel()
+        {
+            
+            MainPanel.Visible = true;
+            MainPanel.Dock = DockStyle.Fill;
+
+
+        }
     }
 }

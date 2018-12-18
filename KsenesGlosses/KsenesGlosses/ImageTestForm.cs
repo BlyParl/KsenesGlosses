@@ -16,5 +16,15 @@ namespace KsenesGlosses
         {
             InitializeComponent();
         }
+
+        private void Exit_test_Click(object sender, EventArgs e)
+        {
+            //create login item
+            MainForm temp = new MainForm();
+            //hide create form
+            this.Hide();
+            //shows login form
+            temp.Show_main_panel();
+        }
     }
 }

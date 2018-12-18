@@ -30,8 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Logout_button = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.User_Settings = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.Minimize = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Close = new System.Windows.Forms.PictureBox();
-            this.Logout_button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.MainPanel.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             this.panel1.Controls.Add(this.Logout_button);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.User_Settings);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -71,6 +71,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(166, 633);
             this.panel1.TabIndex = 0;
+            // 
+            // Logout_button
+            // 
+            this.Logout_button.FlatAppearance.BorderSize = 0;
+            this.Logout_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Logout_button.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout_button.ForeColor = System.Drawing.Color.White;
+            this.Logout_button.Image = global::KsenesGlosses.Properties.Resources.exit2;
+            this.Logout_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Logout_button.Location = new System.Drawing.Point(0, 556);
+            this.Logout_button.Name = "Logout_button";
+            this.Logout_button.Size = new System.Drawing.Size(166, 74);
+            this.Logout_button.TabIndex = 3;
+            this.Logout_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Logout_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Logout_button.UseVisualStyleBackColor = true;
+            this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
             // 
             // button3
             // 
@@ -88,21 +105,22 @@
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // User_Settings
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(3, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 79);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Profile";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.User_Settings.FlatAppearance.BorderSize = 0;
+            this.User_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.User_Settings.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Settings.ForeColor = System.Drawing.Color.White;
+            this.User_Settings.Image = ((System.Drawing.Image)(resources.GetObject("User_Settings.Image")));
+            this.User_Settings.Location = new System.Drawing.Point(3, 182);
+            this.User_Settings.Name = "User_Settings";
+            this.User_Settings.Size = new System.Drawing.Size(163, 79);
+            this.User_Settings.TabIndex = 3;
+            this.User_Settings.Text = "Profile";
+            this.User_Settings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.User_Settings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.User_Settings.UseVisualStyleBackColor = true;
+            this.User_Settings.Click += new System.EventHandler(this.User_Settings_Click);
             // 
             // button2
             // 
@@ -287,23 +305,6 @@
             this.Close.TabStop = false;
             this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
-            // Logout_button
-            // 
-            this.Logout_button.FlatAppearance.BorderSize = 0;
-            this.Logout_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Logout_button.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout_button.ForeColor = System.Drawing.Color.White;
-            this.Logout_button.Image = global::KsenesGlosses.Properties.Resources.exit2;
-            this.Logout_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Logout_button.Location = new System.Drawing.Point(0, 556);
-            this.Logout_button.Name = "Logout_button";
-            this.Logout_button.Size = new System.Drawing.Size(166, 74);
-            this.Logout_button.TabIndex = 3;
-            this.Logout_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Logout_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.Logout_button.UseVisualStyleBackColor = true;
-            this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -337,7 +338,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button User_Settings;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button button5;

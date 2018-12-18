@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.Border = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Minimize = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Close = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.email = new System.Windows.Forms.TextBox();
             this.panel_email = new System.Windows.Forms.Panel();
             this.Last_name = new System.Windows.Forms.TextBox();
@@ -46,10 +46,10 @@
             this.panel_username = new System.Windows.Forms.Panel();
             this.img_username = new System.Windows.Forms.PictureBox();
             this.Border.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_last_name)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_fisrt_name)).BeginInit();
@@ -66,15 +66,8 @@
             this.Border.Name = "Border";
             this.Border.Size = new System.Drawing.Size(800, 32);
             this.Border.TabIndex = 5;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::KsenesGlosses.Properties.Resources.User_Settings_128;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.Border.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Border_MouseDown);
+            this.Border.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Border_MouseMove);
             // 
             // Minimize
             // 
@@ -84,6 +77,7 @@
             this.Minimize.Size = new System.Drawing.Size(32, 32);
             this.Minimize.TabIndex = 0;
             this.Minimize.TabStop = false;
+            this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
             // 
             // pictureBox4
             // 
@@ -102,6 +96,16 @@
             this.Close.Size = new System.Drawing.Size(32, 32);
             this.Close.TabIndex = 0;
             this.Close.TabStop = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::KsenesGlosses.Properties.Resources.User_Settings_128;
+            this.pictureBox1.Location = new System.Drawing.Point(29, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // email
             // 
@@ -259,10 +263,10 @@
             this.Name = "User_Settings";
             this.Text = "Form2";
             this.Border.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_email)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_last_name)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_fisrt_name)).EndInit();
