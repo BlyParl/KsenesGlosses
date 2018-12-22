@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.OleDb;
+using System.Diagnostics;
 
 namespace KsenesGlosses.Classes
 {
@@ -47,13 +49,69 @@ namespace KsenesGlosses.Classes
         /// <returns></returns>
         public static Test createRandomTest(int numberOfQuestions, int levelMin, int levelMax, String category, String languageFrom, String languageTo)
         {
-            //NOT FINISHED
-            //using this method for general purposes as it can be used later for various types of tests instead of only one specific type as questions and words are accessible through this
-            return null;
+
+            Test test = new Test();
+            test.questions = new Question[numberOfQuestions];
+           
+
+            PutARandomword(test, numberOfQuestions);
+
+            return test;
 
         }
 
-        
+        /// <summary>
+        /// Execute a query  get word to translate and the translated word from the DataBase to a test
+        /// </summary>
+        public static void PutARandomword(Test test, int numberOfQuestions)
+        {
+            string strSQL = "SELECT  ENGLISH.Word, GREEK.Word AS Expr1 FROM(ENGLISH INNER JOIN GREEK ON ENGLISH.Word_ID = GREEK.Word_ID ) ";
+
+
+            try
+            {
+
+                using (OleDbConnection connection = new OleDbConnection(Properties.Settings.Default.VocLearningConnectionString)) //this will colse the connection only need to open
+                {
+                    using (OleDbCommand command = new OleDbCommand(strSQL, connection))
+                    {
+
+                        connection.Open();
+                        int counter = 0;
+                        OleDbDataReader reader = command.ExecuteReader();
+                        
+                        //
+                        //set the words
+                        while (reader.Read() && counter< numberOfQuestions)
+                        {
+                            Question question = new Question();
+                            question.word = reader.GetString(0);
+                            question.translatedWord = reader.GetString(1);
+                            question.language = null;
+                            question.translatedLanguage = null;
+                            question.image = null;
+                            question.level = 0;
+                            question.category = null;
+
+                            test.questions[counter]= question;
+                           
+                            counter++;
+                        }
+
+                       
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+
+            }
+
+
+        }
+
 
 
 

@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
@@ -107,7 +108,6 @@
     <Compile Include="VocalTestForm.Designer.cs">
       <DependentUpon>VocalTestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VocLearningDataSet.Designer.cs" />
     <EmbeddedResource Include="Create_acc.resx">
       <DependentUpon>Create_acc.cs</DependentUpon>
     </EmbeddedResource>

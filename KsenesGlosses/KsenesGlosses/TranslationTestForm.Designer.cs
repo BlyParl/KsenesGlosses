@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.previousButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.answerTextBox = new System.Windows.Forms.TextBox();
+            this.wordToTranslateTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.doneButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -44,36 +45,38 @@
             this.progressBar1.Location = new System.Drawing.Point(156, 349);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(446, 26);
+            this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 2;
             // 
-            // button1
+            // nextButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button1.Location = new System.Drawing.Point(605, 222);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Next";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.nextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.nextButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.nextButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.nextButton.Location = new System.Drawing.Point(605, 222);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(100, 30);
+            this.nextButton.TabIndex = 8;
+            this.nextButton.Text = "Next";
+            this.nextButton.UseVisualStyleBackColor = false;
+            this.nextButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button5
+            // previousButton
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button5.Location = new System.Drawing.Point(478, 222);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 30);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Previous";
-            this.button5.UseVisualStyleBackColor = false;
+            this.previousButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.previousButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.previousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.previousButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.previousButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.previousButton.Location = new System.Drawing.Point(478, 222);
+            this.previousButton.Name = "previousButton";
+            this.previousButton.Size = new System.Drawing.Size(100, 30);
+            this.previousButton.TabIndex = 7;
+            this.previousButton.Text = "Previous";
+            this.previousButton.UseVisualStyleBackColor = false;
+            this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
             // 
             // label1
             // 
@@ -82,26 +85,27 @@
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
-            // textBox1
+            // answerTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox1.Location = new System.Drawing.Point(156, 119);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 120);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.answerTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.answerTextBox.Location = new System.Drawing.Point(156, 119);
+            this.answerTextBox.Multiline = true;
+            this.answerTextBox.Name = "answerTextBox";
+            this.answerTextBox.Size = new System.Drawing.Size(279, 120);
+            this.answerTextBox.TabIndex = 9;
+            this.answerTextBox.TextChanged += new System.EventHandler(this.answerTextBox_TextChanged);
+            this.answerTextBox.Enter += new System.EventHandler(this.textBox1_Enter);
             // 
-            // textBox2
+            // wordToTranslateTextBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox2.Location = new System.Drawing.Point(156, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(163, 27);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.Text = "Word to Translate";
+            this.wordToTranslateTextBox.BackColor = System.Drawing.Color.White;
+            this.wordToTranslateTextBox.Enabled = false;
+            this.wordToTranslateTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.wordToTranslateTextBox.Location = new System.Drawing.Point(156, 61);
+            this.wordToTranslateTextBox.Name = "wordToTranslateTextBox";
+            this.wordToTranslateTextBox.Size = new System.Drawing.Size(163, 27);
+            this.wordToTranslateTextBox.TabIndex = 9;
+            this.wordToTranslateTextBox.Text = "Word to Translate";
             // 
             // button2
             // 
@@ -116,22 +120,39 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // doneButton
+            // 
+            this.doneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.doneButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.doneButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.doneButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.doneButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.doneButton.Location = new System.Drawing.Point(605, 279);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(100, 30);
+            this.doneButton.TabIndex = 11;
+            this.doneButton.Text = "Done";
+            this.doneButton.UseVisualStyleBackColor = false;
+            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
+            // 
             // TranslationTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.doneButton);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.wordToTranslateTextBox);
+            this.Controls.Add(this.answerTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.nextButton);
+            this.Controls.Add(this.previousButton);
             this.Controls.Add(this.progressBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TranslationTestForm";
             this.Text = "TranslationTestForm";
+            this.Load += new System.EventHandler(this.TranslationTestForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,11 +161,12 @@
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Button previousButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox answerTextBox;
+        private System.Windows.Forms.TextBox wordToTranslateTextBox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button doneButton;
     }
 }

@@ -45,20 +45,32 @@ namespace KsenesGlosses.Classes
         /// Calculates and returns the total correct answers the user has made in the test.
         /// </summary>
         /// <returns></returns>
-        int getTotalCorrectAnswers()
+       public int getTotalCorrectAnswers()
         {
-            //NOT FINISHED
-            return -1;
+            int correct = 0;
+           
+            for(int i =0; i<answers.Length;i++)
+            {
+                if (test.questions[i].translatedWord == answers[i])
+                    correct++;
+            }
+            return correct;
         }
 
         /// <summary>
         /// Calculates and returns the total wrong answers the user has made in the test.
         /// </summary>
         /// <returns></returns>
-        int getTotalWrongAnswers()
+      public  int getTotalWrongAnswers()
         {
-            //NOT FINISHED
-            return -1;
+            int wrong = 0;
+
+            for (int i = 0; i < answers.Length; i++)
+            {
+                if (test.questions[i].translatedWord != answers[i])
+                    wrong++;
+            }
+            return wrong;
         }
     }
 }
