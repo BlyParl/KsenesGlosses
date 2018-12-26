@@ -47,6 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminMenu\AdminMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMenu\AdminMenu.Designer.cs">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMenu\AdminEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMenu\AdminEdit.Designer.cs">
+      <DependentUpon>AdminEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMenu\AdminEdit_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMenu\AdminEdit_User.Designer.cs">
+      <DependentUpon>AdminEdit_User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Question.cs" />
     <Compile Include="Classes\Test.cs" />
     <Compile Include="Classes\TestTaken.cs" />
@@ -57,12 +75,6 @@
     </Compile>
     <Compile Include="Create_acc.designer.cs">
       <DependentUpon>Create_acc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="User_Settings.cs">
       <SubType>Form</SubType>
@@ -108,11 +120,22 @@
     <Compile Include="VocalTestForm.Designer.cs">
       <DependentUpon>VocalTestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VocLearningDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VocLearningDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminMenu\AdminEdit.resx">
+      <DependentUpon>AdminEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMenu\AdminEdit_User.resx">
+      <DependentUpon>AdminEdit_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMenu\AdminMenu.resx">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Create_acc.resx">
       <DependentUpon>Create_acc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImageTestForm.resx">
       <DependentUpon>ImageTestForm.cs</DependentUpon>
@@ -157,7 +180,11 @@
     <None Include="VocLearningDataSet.xsc">
       <DependentUpon>VocLearningDataSet.xsd</DependentUpon>
     </None>
-    <None Include="VocLearningDataSet.xsd" />
+    <None Include="VocLearningDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VocLearningDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="VocLearningDataSet.xss">
       <DependentUpon>VocLearningDataSet.xsd</DependentUpon>
     </None>
@@ -223,6 +250,9 @@
     <None Include="Resources\username_blue.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="VocLearning.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\User_Settings_128.png" />
     <None Include="Resources\User_Settings.png" />
     <None Include="Resources\exit2.png" />

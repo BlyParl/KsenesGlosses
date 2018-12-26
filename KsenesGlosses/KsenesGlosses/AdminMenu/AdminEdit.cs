@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KsenesGlosses
+namespace KsenesGlosses.AdminMenu
 {
-    public partial class Form1 : Form
+    public partial class AdminEdit : Form
     {
-        public Form1()
+        public AdminEdit()
         {
             InitializeComponent();
         }
