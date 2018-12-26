@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.OleDb;//this is for the database
+using System.Diagnostics;//this is for debug meesage 
 
 namespace KsenesGlosses
 {
@@ -10,7 +12,7 @@ namespace KsenesGlosses
     /// <summary>
     /// Class type of a User. Used to describe a user using this application.
     /// </summary>
-    class User
+   public class User //to ekana public gt eixa problhma me to na pernaw User antikeimeno metaxi twn  Forms dn 3erw poso swsto einai
     {
         public int user_id { get; private set; }
         public String first_name { get; set; }
@@ -65,8 +67,41 @@ namespace KsenesGlosses
         /// <returns>Type User from Database</returns>
         public static User getUserFromDB(String user_name)
         {
-            //NOT FINISHED
-            return null;
+            User user = new User();
+            string strSQL = "SELECT ID, First_Name, Last_Name, User_Name, Email_Adress FROM USERS WHERE(User_Name = @name) ";
+
+
+            try
+            {
+
+                using (OleDbConnection connection = new OleDbConnection(Properties.Settings.Default.VocLearningConnectionString)) //this will colse the connection only need to open
+                {
+                    using (OleDbCommand command = new OleDbCommand(strSQL, connection))
+                    {
+
+                        connection.Open();
+                        command.Parameters.AddWithValue("@name", user_name);
+                        OleDbDataReader reader = command.ExecuteReader();
+
+                      
+                        while (reader.Read())
+                        {
+                            user.user_id = reader.GetInt32(0);
+                            user.first_name = reader.GetString(1);
+                            user.last_name = reader.GetString(2);
+                            user.user_name = reader.GetString(3);
+                            user.email_address = reader.GetString(4);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+
+            }
+            return user;
         }
 
         /// <summary>

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KsenesGlosses.Classes;
+
 
 namespace KsenesGlosses
 {
@@ -199,6 +201,13 @@ namespace KsenesGlosses
             this.Hide();
             //show the other form
             temp.Show();
+            //
+            //get user from db for testing  this is not a log in 
+            //
+            User newUser = User.getUserFromDB("ckaktsis");
+            
+            temp.LoggedUser = newUser;
+            MessageBox.Show("User :" + newUser.first_name);
         }
     }
 }

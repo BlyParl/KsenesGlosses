@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.OleDb;
+using System.Diagnostics;
+using KsenesGlosses.Classes;
 
 namespace KsenesGlosses.Classes
 {
@@ -36,9 +39,39 @@ namespace KsenesGlosses.Classes
         /// <summary>
         /// Posts and saves the testTaken on the database
         /// </summary>
-        void postTestTaken()
+      public  void postTestTaken()
         {
-            //NOT FINISHED
+            string strSQL = "INSERT INTO TESTS_TAKEN (User_ID, Test_Level, Test_Type, Correct_Answers, Wrong_Answers, Take_date, Time_to_finish) VALUES(@user_id, @test_level, @test_type, @correct_answers, @wrong_answers, @take_date, @time_to_finish)";
+
+
+            try
+            {
+
+                using (OleDbConnection connection = new OleDbConnection(Properties.Settings.Default.VocLearningConnectionString)) //this will colse the connection only need to open
+                {
+                    using (OleDbCommand command = new OleDbCommand(strSQL, connection))
+                    {
+
+                        connection.Open();
+                        //set tthe Parameters
+                        command.Parameters.AddWithValue("@user_id", user.user_id);
+                        command.Parameters.AddWithValue("@test_level", 3);
+                        command.Parameters.AddWithValue("@test_type","dnt Know");
+                        command.Parameters.AddWithValue("@correct_answers", getTotalCorrectAnswers());
+                        command.Parameters.AddWithValue("@wrong_answers", getTotalWrongAnswers());
+                        command.Parameters.AddWithValue("@take_date", DateTime.Now.Date.ToString("d"));
+                        command.Parameters.AddWithValue("@time_to_finish", timeTaken);
+
+                        command.ExecuteScalar();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message+"smthing wrong  here");
+
+            }
         }
 
         /// <summary>

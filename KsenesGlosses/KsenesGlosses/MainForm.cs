@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KsenesGlosses.Classes;
 
 namespace KsenesGlosses
 {
@@ -16,12 +17,23 @@ namespace KsenesGlosses
         public MainForm()
         {
             InitializeComponent();
+
         }
         public Panel GetMainPanel()
         {
             return MainPanel;
         }
 
+        private User user;
+
+        /// <summary>
+        /// Gets or sets the user that Loged in
+        /// </summary>
+        public User LoggedUser
+        {
+            get { return user; }
+            set { user = value; }
+        }
 
         // gia na kinite to frame
         Point lastPoint;
@@ -35,7 +47,21 @@ namespace KsenesGlosses
 
             if (comboBox1.SelectedIndex == 0)
             {
-                TranslationTestForm vocal = new TranslationTestForm();
+                TranslationTestForm TranslationTest = new TranslationTestForm();
+                TranslationTest.LoggedUser = user; // transfer the user info to the other form
+                TranslationTest.Dock = DockStyle.Fill;
+                TranslationTest.TopLevel = false;
+                MainPanel.Controls.Add(TranslationTest);
+                TranslationTest.Show();
+               
+                
+
+            }
+            else
+
+                 if (comboBox1.SelectedIndex == 1)
+            {
+                VocalTestForm vocal = new VocalTestForm();
                 vocal.Dock = DockStyle.Fill;
                 vocal.TopLevel = false;
                 MainPanel.Controls.Add(vocal);
@@ -43,22 +69,12 @@ namespace KsenesGlosses
                 
             }
             else
-
-                 if (comboBox1.SelectedIndex == 1)
             {
-                VocalTestForm imagesTest = new VocalTestForm();
+                ImageTestForm imagesTest = new ImageTestForm();
                 imagesTest.Dock = DockStyle.Fill;
                 imagesTest.TopLevel = false;
                 MainPanel.Controls.Add(imagesTest);
                 imagesTest.Show();
-            }
-            else
-            {
-                ImageTestForm TranslationTest = new ImageTestForm();
-                TranslationTest.Dock = DockStyle.Fill;
-                TranslationTest.TopLevel = false;
-                MainPanel.Controls.Add(TranslationTest);
-                TranslationTest.Show();
             }
 
 

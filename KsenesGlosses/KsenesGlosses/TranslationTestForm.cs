@@ -32,7 +32,16 @@ namespace KsenesGlosses
 
             
         }
+        private User user;
 
+        /// <summary>
+        /// Gets or sets the user that Loged in
+        /// </summary>
+        public User LoggedUser
+        {
+            get { return user; }
+            set { user = value; }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             progressBar1.Step = progressBar1.Maximum / (nofq - 1); //sets the progres bar length 
@@ -84,7 +93,8 @@ namespace KsenesGlosses
 
             previousButton.Enabled = false; //disable the previus button at the start 
 
-            testTaken = new TestTaken(test, null, answers, 0);  //create testtake to do the work for the answers 
+            testTaken = new TestTaken(test, user, answers, 0);  //create testtake to do the work for the answers 
+           
 
         }
 
@@ -113,7 +123,11 @@ namespace KsenesGlosses
 
         private void doneButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("correct answers :" + testTaken.getTotalCorrectAnswers()+"\n"+"wrong answers :"+testTaken.getTotalWrongAnswers());
+            MessageBox.Show("correct answers :" + testTaken.getTotalCorrectAnswers()+"\n"+"wrong answers :"+testTaken.getTotalWrongAnswers()+"\n"+"Test finished Please Exit");
+            nextButton.Enabled = false;
+            previousButton.Enabled = false;
+            doneButton.Enabled = false;
+            testTaken.postTestTaken();//here we post the results in the DB
         }
     }
 }
