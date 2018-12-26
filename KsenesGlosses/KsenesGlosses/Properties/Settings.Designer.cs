@@ -26,8 +26,7 @@ namespace KsenesGlosses.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\usser\\source\\repos\\BlyParl" +
-            "\\KsenesGlosses\\KsenesGlosses\\VocLearning.accdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\VocLearning.accdb")]
         public string VocLearningConnectionString {
             get {
                 return ((string)(this["VocLearningConnectionString"]));
