@@ -270,5 +270,15 @@ namespace KsenesGlosses
 
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AdminMenu.AdminMenu adminMenu = new AdminMenu.AdminMenu();
+            adminMenu.Dock = DockStyle.Fill;
+            adminMenu.TopLevel = false;
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(adminMenu);
+            adminMenu.Show();
+        }
     }
 }

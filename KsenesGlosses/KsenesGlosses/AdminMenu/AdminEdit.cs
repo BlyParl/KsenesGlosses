@@ -16,5 +16,15 @@ namespace KsenesGlosses.AdminMenu
         {
             InitializeComponent();
         }
+
+        private void Users_RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            AdminEdit_User adminEdit_User = new AdminEdit_User();
+            adminEdit_User.Dock = DockStyle.Fill;
+            adminEdit_User.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(adminEdit_User);
+            adminEdit_User.Show();
+        }
     }
 }

@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminMenu\AdminAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMenu\AdminAdd.Designer.cs">
+      <DependentUpon>AdminAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMenu\AdminAdd_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMenu\AdminAdd_User.Designer.cs">
+      <DependentUpon>AdminAdd_User.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminMenu\AdminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +137,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VocLearningDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminMenu\AdminAdd.resx">
+      <DependentUpon>AdminAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMenu\AdminAdd_User.resx">
+      <DependentUpon>AdminAdd_User.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminMenu\AdminEdit.resx">
       <DependentUpon>AdminEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,7 +269,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="VocLearning.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\User_Settings_128.png" />
     <None Include="Resources\User_Settings.png" />

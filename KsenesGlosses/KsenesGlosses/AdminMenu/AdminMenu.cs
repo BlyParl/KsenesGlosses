@@ -26,7 +26,26 @@ namespace KsenesGlosses.AdminMenu
         {
             if(Edit_RadioButton.Checked)
             {
+                AdminEdit adminEdit = new AdminEdit();
+                adminEdit.Dock = DockStyle.Fill;
+                adminEdit.TopLevel = false;
+                splitContainer1.Panel2.Controls.Clear();
+                splitContainer1.Panel2.Controls.Add(adminEdit);
+                adminEdit.Show();
 
+            }
+        }
+
+        private void Add_RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Add_RadioButton.Checked)
+            {
+                AdminAdd adminAdd = new AdminAdd();
+                adminAdd.Dock = DockStyle.Fill;
+                adminAdd.TopLevel = false;
+                splitContainer1.Panel2.Controls.Clear();
+                splitContainer1.Panel2.Controls.Add(adminAdd);
+                adminAdd.Show();
             }
         }
     }

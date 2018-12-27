@@ -1,6 +1,6 @@
 ﻿namespace KsenesGlosses.AdminMenu
 {
-    partial class AdminEdit
+    partial class AdminAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.Words = new System.Windows.Forms.RadioButton();
-            this.Users_RadioButton = new System.Windows.Forms.RadioButton();
+            this.users_RadioButton = new System.Windows.Forms.RadioButton();
+            this.words_RadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -44,36 +44,35 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.Words);
-            this.splitContainer1.Panel1.Controls.Add(this.Users_RadioButton);
+            this.splitContainer1.Panel1.Controls.Add(this.words_RadioButton);
+            this.splitContainer1.Panel1.Controls.Add(this.users_RadioButton);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 115;
+            this.splitContainer1.SplitterDistance = 106;
             this.splitContainer1.TabIndex = 0;
             // 
-            // Words
+            // users_RadioButton
             // 
-            this.Words.AutoSize = true;
-            this.Words.Location = new System.Drawing.Point(12, 35);
-            this.Words.Name = "Words";
-            this.Words.Size = new System.Drawing.Size(56, 17);
-            this.Words.TabIndex = 1;
-            this.Words.TabStop = true;
-            this.Words.Text = "Words";
-            this.Words.UseVisualStyleBackColor = true;
+            this.users_RadioButton.AutoSize = true;
+            this.users_RadioButton.Location = new System.Drawing.Point(13, 13);
+            this.users_RadioButton.Name = "users_RadioButton";
+            this.users_RadioButton.Size = new System.Drawing.Size(52, 17);
+            this.users_RadioButton.TabIndex = 0;
+            this.users_RadioButton.Text = "Users";
+            this.users_RadioButton.UseVisualStyleBackColor = true;
+            this.users_RadioButton.CheckedChanged += new System.EventHandler(this.users_RadioButton_CheckedChanged);
             // 
-            // Users_RadioButton
+            // words_RadioButton
             // 
-            this.Users_RadioButton.AutoSize = true;
-            this.Users_RadioButton.Location = new System.Drawing.Point(12, 12);
-            this.Users_RadioButton.Name = "Users_RadioButton";
-            this.Users_RadioButton.Size = new System.Drawing.Size(52, 17);
-            this.Users_RadioButton.TabIndex = 0;
-            this.Users_RadioButton.TabStop = true;
-            this.Users_RadioButton.Text = "Users";
-            this.Users_RadioButton.UseVisualStyleBackColor = true;
-            this.Users_RadioButton.CheckedChanged += new System.EventHandler(this.Users_RadioButton_CheckedChanged);
+            this.words_RadioButton.AutoSize = true;
+            this.words_RadioButton.Location = new System.Drawing.Point(13, 36);
+            this.words_RadioButton.Name = "words_RadioButton";
+            this.words_RadioButton.Size = new System.Drawing.Size(56, 17);
+            this.words_RadioButton.TabIndex = 1;
+            this.words_RadioButton.Text = "Words";
+            this.words_RadioButton.UseVisualStyleBackColor = true;
+            this.words_RadioButton.CheckedChanged += new System.EventHandler(this.words_RadioButton_CheckedChanged);
             // 
-            // AdminEdit
+            // AdminAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -81,8 +80,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdminEdit";
-            this.Text = "Form1";
+            this.Name = "AdminAdd";
+            this.Text = "AdminAdd";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -94,7 +93,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.RadioButton Words;
-        private System.Windows.Forms.RadioButton Users_RadioButton;
+        private System.Windows.Forms.RadioButton words_RadioButton;
+        private System.Windows.Forms.RadioButton users_RadioButton;
     }
 }

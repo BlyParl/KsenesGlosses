@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.CancelChanges_Button = new System.Windows.Forms.Button();
+            this.SaveChanges_button = new System.Windows.Forms.Button();
             this.deleteUser_Button = new System.Windows.Forms.Button();
             this.Users_dataGridView = new System.Windows.Forms.DataGridView();
-            this.SaveChanges_button = new System.Windows.Forms.Button();
-            this.CancelChanges_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -60,6 +60,24 @@
             this.splitContainer1.SplitterDistance = 60;
             this.splitContainer1.TabIndex = 0;
             // 
+            // CancelChanges_Button
+            // 
+            this.CancelChanges_Button.Location = new System.Drawing.Point(144, 12);
+            this.CancelChanges_Button.Name = "CancelChanges_Button";
+            this.CancelChanges_Button.Size = new System.Drawing.Size(101, 23);
+            this.CancelChanges_Button.TabIndex = 2;
+            this.CancelChanges_Button.Text = "Cancel Changes";
+            this.CancelChanges_Button.UseVisualStyleBackColor = true;
+            // 
+            // SaveChanges_button
+            // 
+            this.SaveChanges_button.Location = new System.Drawing.Point(251, 12);
+            this.SaveChanges_button.Name = "SaveChanges_button";
+            this.SaveChanges_button.Size = new System.Drawing.Size(101, 23);
+            this.SaveChanges_button.TabIndex = 1;
+            this.SaveChanges_button.Text = "Save Changes";
+            this.SaveChanges_button.UseVisualStyleBackColor = true;
+            // 
             // deleteUser_Button
             // 
             this.deleteUser_Button.Location = new System.Drawing.Point(12, 12);
@@ -77,24 +95,6 @@
             this.Users_dataGridView.Name = "Users_dataGridView";
             this.Users_dataGridView.Size = new System.Drawing.Size(800, 386);
             this.Users_dataGridView.TabIndex = 0;
-            // 
-            // SaveChanges_button
-            // 
-            this.SaveChanges_button.Location = new System.Drawing.Point(687, 12);
-            this.SaveChanges_button.Name = "SaveChanges_button";
-            this.SaveChanges_button.Size = new System.Drawing.Size(101, 23);
-            this.SaveChanges_button.TabIndex = 1;
-            this.SaveChanges_button.Text = "Save Changes";
-            this.SaveChanges_button.UseVisualStyleBackColor = true;
-            // 
-            // CancelChanges_Button
-            // 
-            this.CancelChanges_Button.Location = new System.Drawing.Point(580, 12);
-            this.CancelChanges_Button.Name = "CancelChanges_Button";
-            this.CancelChanges_Button.Size = new System.Drawing.Size(101, 23);
-            this.CancelChanges_Button.TabIndex = 2;
-            this.CancelChanges_Button.Text = "Cancel Changes";
-            this.CancelChanges_Button.UseVisualStyleBackColor = true;
             // 
             // AdminEdit_User
             // 

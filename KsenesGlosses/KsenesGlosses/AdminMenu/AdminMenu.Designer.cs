@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.Edit_RadioButton = new System.Windows.Forms.RadioButton();
             this.Add_RadioButton = new System.Windows.Forms.RadioButton();
+            this.Edit_RadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -51,19 +51,6 @@
             this.splitContainer1.SplitterDistance = 45;
             this.splitContainer1.TabIndex = 0;
             // 
-            // Edit_RadioButton
-            // 
-            this.Edit_RadioButton.AutoSize = true;
-            this.Edit_RadioButton.Checked = true;
-            this.Edit_RadioButton.Location = new System.Drawing.Point(13, 13);
-            this.Edit_RadioButton.Name = "Edit_RadioButton";
-            this.Edit_RadioButton.Size = new System.Drawing.Size(43, 17);
-            this.Edit_RadioButton.TabIndex = 0;
-            this.Edit_RadioButton.TabStop = true;
-            this.Edit_RadioButton.Text = "Edit";
-            this.Edit_RadioButton.UseVisualStyleBackColor = true;
-            this.Edit_RadioButton.CheckedChanged += new System.EventHandler(this.Edit_RadioButton_CheckedChanged);
-            // 
             // Add_RadioButton
             // 
             this.Add_RadioButton.AutoSize = true;
@@ -74,6 +61,18 @@
             this.Add_RadioButton.TabStop = true;
             this.Add_RadioButton.Text = "Add";
             this.Add_RadioButton.UseVisualStyleBackColor = true;
+            this.Add_RadioButton.CheckedChanged += new System.EventHandler(this.Add_RadioButton_CheckedChanged);
+            // 
+            // Edit_RadioButton
+            // 
+            this.Edit_RadioButton.AutoSize = true;
+            this.Edit_RadioButton.Location = new System.Drawing.Point(13, 13);
+            this.Edit_RadioButton.Name = "Edit_RadioButton";
+            this.Edit_RadioButton.Size = new System.Drawing.Size(43, 17);
+            this.Edit_RadioButton.TabIndex = 0;
+            this.Edit_RadioButton.Text = "Edit";
+            this.Edit_RadioButton.UseVisualStyleBackColor = true;
+            this.Edit_RadioButton.CheckedChanged += new System.EventHandler(this.Edit_RadioButton_CheckedChanged);
             // 
             // AdminMenu
             // 
