@@ -60,6 +60,7 @@
             this.Words.TabStop = true;
             this.Words.Text = "Words";
             this.Words.UseVisualStyleBackColor = true;
+            this.Words.CheckedChanged += new System.EventHandler(this.Words_CheckedChanged);
             // 
             // Users_RadioButton
             // 

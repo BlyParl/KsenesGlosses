@@ -26,5 +26,15 @@ namespace KsenesGlosses.AdminMenu
             splitContainer1.Panel2.Controls.Add(adminEdit_User);
             adminEdit_User.Show();
         }
+
+        private void Words_CheckedChanged(object sender, EventArgs e)
+        {
+            AdminEdit_Word adminEdit_Word = new AdminEdit_Word();
+            adminEdit_Word.Dock = DockStyle.Fill;
+            adminEdit_Word.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(adminEdit_Word);
+            adminEdit_Word.Show();
+        }
     }
 }

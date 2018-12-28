@@ -273,7 +273,7 @@ namespace KsenesGlosses
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AdminMenu.AdminMenu adminMenu = new AdminMenu.AdminMenu();
+            AdminMenu.AdminEdit adminMenu = new AdminMenu.AdminEdit();
             adminMenu.Dock = DockStyle.Fill;
             adminMenu.TopLevel = false;
             MainPanel.Controls.Clear();

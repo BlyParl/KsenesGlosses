@@ -59,6 +59,12 @@
     <Compile Include="AdminMenu\AdminAdd_User.Designer.cs">
       <DependentUpon>AdminAdd_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminMenu\AdminEdit_Word.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMenu\AdminEdit_Word.Designer.cs">
+      <DependentUpon>AdminEdit_Word.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminMenu\AdminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMenu\AdminEdit_User.resx">
       <DependentUpon>AdminEdit_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMenu\AdminEdit_Word.resx">
+      <DependentUpon>AdminEdit_Word.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMenu\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
