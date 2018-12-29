@@ -30,11 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VocalTestForm));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.listenWord = new System.Windows.Forms.PictureBox();
+            this.answerTextBox = new System.Windows.Forms.TextBox();
+            this.previousButton = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.doneButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.listenWord)).BeginInit();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -44,53 +46,82 @@
             this.progressBar1.Location = new System.Drawing.Point(177, 347);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(446, 26);
+            this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 1;
             // 
-            // pictureBox1
+            // listenWord
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(460, 87);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.listenWord.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("listenWord.BackgroundImage")));
+            this.listenWord.Location = new System.Drawing.Point(402, 149);
+            this.listenWord.Name = "listenWord";
+            this.listenWord.Size = new System.Drawing.Size(64, 64);
+            this.listenWord.TabIndex = 2;
+            this.listenWord.TabStop = false;
+            this.listenWord.Click += new System.EventHandler(this.listenWord_Click);
             // 
-            // textBox1
+            // answerTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox1.Location = new System.Drawing.Point(177, 87);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 44);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "House";
+            this.answerTextBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.answerTextBox.Location = new System.Drawing.Point(177, 169);
+            this.answerTextBox.Multiline = true;
+            this.answerTextBox.Name = "answerTextBox";
+            this.answerTextBox.Size = new System.Drawing.Size(202, 44);
+            this.answerTextBox.TabIndex = 3;
+            this.answerTextBox.TextChanged += new System.EventHandler(this.answerTextBox_TextChanged);
             // 
-            // button5
+            // previousButton
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button5.Location = new System.Drawing.Point(391, 245);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 30);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Previous";
-            this.button5.UseVisualStyleBackColor = false;
+            this.previousButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.previousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.previousButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.previousButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.previousButton.Location = new System.Drawing.Point(391, 245);
+            this.previousButton.Name = "previousButton";
+            this.previousButton.Size = new System.Drawing.Size(100, 30);
+            this.previousButton.TabIndex = 5;
+            this.previousButton.Text = "Previous";
+            this.previousButton.UseVisualStyleBackColor = false;
+            this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
             // 
-            // button1
+            // nextButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.button1.Location = new System.Drawing.Point(523, 245);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Next";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.nextButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.nextButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.nextButton.Location = new System.Drawing.Point(523, 245);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(100, 30);
+            this.nextButton.TabIndex = 6;
+            this.nextButton.Text = "Next";
+            this.nextButton.UseVisualStyleBackColor = false;
+            this.nextButton.Click += new System.EventHandler(this.answerButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.label1.Location = new System.Drawing.Point(177, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 24);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Write The Word";
+            // 
+            // doneButton
+            // 
+            this.doneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.doneButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.doneButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.doneButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.doneButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.doneButton.Location = new System.Drawing.Point(523, 290);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(100, 30);
+            this.doneButton.TabIndex = 12;
+            this.doneButton.Text = "Done";
+            this.doneButton.UseVisualStyleBackColor = false;
+            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
             // 
             // VocalTestForm
             // 
@@ -98,15 +129,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.doneButton);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nextButton);
+            this.Controls.Add(this.previousButton);
+            this.Controls.Add(this.answerTextBox);
+            this.Controls.Add(this.listenWord);
             this.Controls.Add(this.progressBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VocalTestForm";
             this.Text = "VocalTestForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.VocalTestForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.listenWord)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,9 +148,11 @@
 
         #endregion
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox listenWord;
+        private System.Windows.Forms.TextBox answerTextBox;
+        private System.Windows.Forms.Button previousButton;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button doneButton;
     }
 }

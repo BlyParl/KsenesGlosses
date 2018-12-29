@@ -62,6 +62,7 @@ namespace KsenesGlosses
                  if (comboBox1.SelectedIndex == 1)
             {
                 VocalTestForm vocal = new VocalTestForm();
+                vocal.LoggedUser = user;// transfer the user info to the other form
                 vocal.Dock = DockStyle.Fill;
                 vocal.TopLevel = false;
                 MainPanel.Controls.Add(vocal);

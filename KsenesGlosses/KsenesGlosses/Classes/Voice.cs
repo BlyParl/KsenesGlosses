@@ -49,7 +49,10 @@ namespace KsenesGlosses.Classes
         {
             recEngine.RecognizeAsync(RecognizeMode.Multiple);               // recognize once 
         }
-
+        /// <summary>
+        /// speaks the string you put in
+        /// </summary>
+        /// <param name="h"></param>
         public void say(String h) { s.Speak(h); } //speaks back at you 
 
         void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)   //Speech Rec e returns what word we said  from the list  (christos)  

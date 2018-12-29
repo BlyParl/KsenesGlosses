@@ -17,6 +17,7 @@ namespace KsenesGlosses.Classes
         public Test test { get; set; }
         public User user { get; set; }
         public String[] answers { get; set; }
+        public string test_type { get; set; }
         public float timeTaken { get; set; }
 
         public TestTaken()
@@ -24,11 +25,12 @@ namespace KsenesGlosses.Classes
         }
 
         //full constructor
-        public TestTaken(Test test, User user, string[] answers, float timeTaken)
+        public TestTaken(Test test, User user, string[] answers, string test_type, float timeTaken)
         {
             this.test = test;
             this.user = user;
             this.answers = answers;
+            this.test_type = test_type;
             this.timeTaken = timeTaken;
         }
 
@@ -56,13 +58,14 @@ namespace KsenesGlosses.Classes
                         //set tthe Parameters
                         command.Parameters.AddWithValue("@user_id", user.user_id);
                         command.Parameters.AddWithValue("@test_level", 3);
-                        command.Parameters.AddWithValue("@test_type","dnt Know");
+                        command.Parameters.AddWithValue("@test_type",test_type);
                         command.Parameters.AddWithValue("@correct_answers", getTotalCorrectAnswers());
                         command.Parameters.AddWithValue("@wrong_answers", getTotalWrongAnswers());
                         command.Parameters.AddWithValue("@take_date", DateTime.Now.Date.ToString("d"));
                         command.Parameters.AddWithValue("@time_to_finish", timeTaken);
 
                         command.ExecuteScalar();
+                        
                     }
                 }
 
@@ -84,8 +87,18 @@ namespace KsenesGlosses.Classes
            
             for(int i =0; i<answers.Length;i++)
             {
-                if (test.questions[i].translatedWord == answers[i])
-                    correct++;
+                if(test_type== "Translation")//check the Test_type because of different type of answers
+                {
+                    if (test.questions[i].translatedWord == answers[i])
+                        correct++;
+                }
+                else if(test_type == "Listening")
+                {
+                    if (test.questions[i].word == answers[i])
+                        correct++;
+                }
+
+                
             }
             return correct;
         }
@@ -100,8 +113,16 @@ namespace KsenesGlosses.Classes
 
             for (int i = 0; i < answers.Length; i++)
             {
-                if (test.questions[i].translatedWord != answers[i])
-                    wrong++;
+                if (test_type == "Translation")//check the Test_type because of different type of answers
+                {
+                    if (test.questions[i].translatedWord != answers[i])
+                        wrong++;
+                }
+                else if (test_type == "Listening")
+                {
+                    if (test.questions[i].word != answers[i])
+                        wrong++;
+                }
             }
             return wrong;
         }

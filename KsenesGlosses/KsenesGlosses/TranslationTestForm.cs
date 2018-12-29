@@ -93,7 +93,7 @@ namespace KsenesGlosses
 
             previousButton.Enabled = false; //disable the previus button at the start 
 
-            testTaken = new TestTaken(test, user, answers, 0);  //create testtake to do the work for the answers 
+            testTaken = new TestTaken(test, user, answers,"Translation", 0);  //create testtake to do the work for the answers 
            
 
         }
@@ -123,7 +123,7 @@ namespace KsenesGlosses
 
         private void doneButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("correct answers :" + testTaken.getTotalCorrectAnswers()+"\n"+"wrong answers :"+testTaken.getTotalWrongAnswers()+"\n"+"Test finished Please Exit");
+            MessageBox.Show("Test Type :"+testTaken.test_type+"\n"+"correct answers :" + testTaken.getTotalCorrectAnswers()+"\n"+"wrong answers :"+testTaken.getTotalWrongAnswers()+"\n"+"Test finished Please Exit");
             nextButton.Enabled = false;
             previousButton.Enabled = false;
             doneButton.Enabled = false;
