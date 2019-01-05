@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ImageComboBox, Version=1.0.2008.18717, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ImageComboBox\ImageComboBox\ImageComboBox\bin\Release\ImageComboBox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -82,6 +86,12 @@
     </Compile>
     <Compile Include="AdminMenu\AdminEdit_User.Designer.cs">
       <DependentUpon>AdminEdit_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chooseTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chooseTest.Designer.cs">
+      <DependentUpon>chooseTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Question.cs" />
     <Compile Include="Classes\Test.cs" />
@@ -138,6 +148,9 @@
     <Compile Include="VocalTestForm.Designer.cs">
       <DependentUpon>VocalTestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VocLearningDataSet.cs">
+      <DependentUpon>VocLearningDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="VocLearningDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMenu\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chooseTest.resx">
+      <DependentUpon>chooseTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Create_acc.resx">
       <DependentUpon>Create_acc.cs</DependentUpon>
@@ -294,5 +310,6 @@
     <Content Include="Resources\rsz_united-kingdom_120px.png" />
     <Content Include="Resources\user1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
