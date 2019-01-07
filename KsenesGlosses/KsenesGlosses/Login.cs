@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace KsenesGlosses
 
         // gia na kinite to frame
         Point lastPoint;
+        // Fail login counter
+        private int _failedLoginCounter = 0;
 
         private void Close_Click(object sender, EventArgs e)
         {
@@ -195,19 +198,127 @@ namespace KsenesGlosses
 
         private void Sing_in_Click(object sender, EventArgs e)
         {
-            //create a create_acc form 
-            MainForm temp = new MainForm();
-            // hide this form
-            this.Hide();
-            //show the other form
-            temp.Show();
-            //
-            //get user from db for testing  this is not a log in 
-            //
-            User newUser = User.getUserFromDB("ckaktsis");
-            
-            temp.LoggedUser = newUser;
-            MessageBox.Show("User :" + newUser.first_name);
+            reset();
+
+            var username = Username.Text;
+            var password = Password.Text;
+
+            if (string.IsNullOrEmpty(username) || username.Equals("Username"))
+            {
+                MessageBox.Show("Please type your Username");
+                Username_Click(sender, e);
+                Username.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(password) || password.Equals("Password"))
+            {
+                MessageBox.Show("Please type your Password");
+                Password_Click(sender, e);
+                Password.Focus();
+                return;
+            }
+
+            // Seperate the login check and make it lously coupled from the UI (= do not refer to the UI elements, instead pass the values to a method)
+            CheckLogin(username, password);
+
+        }
+
+        private void CheckLogin(string username, string password)
+        {
+            try
+            {
+                string constring = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\sotma\OneDrive\Έγγραφα\GitHub\KsenesGlosses\KsenesGlosses\KsenesGlosses\VocLearning.accdb;";
+
+                // You need to use a using statement since OleDbConnection implements IDisposable
+                // more inf: http://msdn.microsoft.com/en-us/library/system.data.oledb.oledbconnection(v=vs.110).aspx
+                using (OleDbConnection conDataBase = new OleDbConnection(constring))
+                {
+                    // You need to use a using statement since OleDbCommand implements IDisposable
+                    // more info: http://msdn.microsoft.com/en-us/library/system.data.oledb.oledbcommand(v=vs.110).aspx
+                    using (OleDbCommand cmdDataBase = conDataBase.CreateCommand())
+                    {
+                        cmdDataBase.CommandText =
+                            "SELECT * FROM USERS WHERE User_Name=@username AND Password = @password";
+
+                        cmdDataBase.Parameters.AddRange(new OleDbParameter[]
+                        {
+                    new OleDbParameter("@username", username),
+                    new OleDbParameter("@password", password)
+                        });
+
+                        // Open database if not open
+                        if (conDataBase.State != ConnectionState.Open)
+                            conDataBase.Open();
+
+                        var numberOrResults = 0;
+
+                        // You need to use a using statement since OleDbDataReader inherits DbDataReader which implements IDisposable
+                        // more info: http://msdn.microsoft.com/en-us/library/system.data.common.dbdatareader(v=vs.110).aspx
+                        using (OleDbDataReader myReader = cmdDataBase.ExecuteReader())
+                        {
+                            while (myReader != null && myReader.Read())
+                            {
+                                numberOrResults++;
+                            }
+                        }
+
+                        // If only one result was returned by the database => Succesful login
+                        if (numberOrResults == 1)
+                        {
+                            MessageBox.Show("Login Successful");
+                            //create a create_acc form 
+                            MainForm temp = new MainForm();
+                            // hide this form
+                            this.Hide();
+                            //show the other form
+                            temp.Show();
+                            //
+                            //get user from db for testing  this is not a log in 
+                            //
+                            User newUser = User.getUserFromDB(username);
+                            temp.LoggedUser = newUser;
+                            MessageBox.Show("User :" + newUser.first_name);
+                        }
+
+                        // If more than 1 result was returned by the database => Failed login
+                        // This is not a good idea, this situation should never occor.
+                        // Always make sure username + pass (or whatever you use for authentication) is unique.
+                        else if (numberOrResults > 1)
+                        {
+                            MessageBox.Show("Duplicate Username or Password");
+                            // increment the failed login counter
+                            _failedLoginCounter++;
+                        }
+                        // No match was found in te database => Failed login
+                        else if (numberOrResults == 0)
+                        {
+                            MessageBox.Show("Username or Password do not match");
+                            // increment the failed login counter
+                            _failedLoginCounter++;
+                        }
+                    }
+
+                }
+
+                // If the user has 3 failed login attempts on a row => close.
+                if (_failedLoginCounter >= 3)
+                    this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Login_MouseClick(object sender, MouseEventArgs e)
+        {
+            reset();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
     }
 }

@@ -262,6 +262,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "User_Settings";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.User_Settings_Load);
             this.Border.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

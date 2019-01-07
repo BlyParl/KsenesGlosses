@@ -329,6 +329,7 @@
             this.Controls.Add(this.img_username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Create_acc";
+            this.Load += new System.EventHandler(this.Create_acc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_email)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_last_name)).EndInit();

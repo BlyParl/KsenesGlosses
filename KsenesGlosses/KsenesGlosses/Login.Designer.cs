@@ -287,6 +287,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Login_MouseClick);
             this.Border.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

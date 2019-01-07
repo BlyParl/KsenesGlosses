@@ -451,7 +451,7 @@ namespace KsenesGlosses
         {
             // TODO: This line of code loads data into the 'vocLearningDataSet.CATEGORIES' table. You can move, or remove it, as needed.
             this.cATEGORIESTableAdapter.Fill(this.vocLearningDataSet.CATEGORIES);
-
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
         private void categoryChoose_RadioButton_CheckedChanged(object sender, EventArgs e)
