@@ -189,10 +189,6 @@ namespace KsenesGlosses
             else
             {
                 Password.PasswordChar = '*';
-                if (pass_caps_check())
-                {
-                    Password.Text = "caps";
-                }
             }
         }
 
@@ -219,6 +215,14 @@ namespace KsenesGlosses
                 return;
             }
 
+            if (pass_caps_check())
+            {
+                MessageBox.Show("Password contains uppercase characters");
+                Password_Click(sender, e);
+                Password.Focus();
+                return;
+            }
+
             // Seperate the login check and make it lously coupled from the UI (= do not refer to the UI elements, instead pass the values to a method)
             CheckLogin(username, password);
 
@@ -228,18 +232,13 @@ namespace KsenesGlosses
         {
             try
             {
-                string constring = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\sotma\OneDrive\Έγγραφα\GitHub\KsenesGlosses\KsenesGlosses\KsenesGlosses\VocLearning.accdb;";
 
-                // You need to use a using statement since OleDbConnection implements IDisposable
-                // more inf: http://msdn.microsoft.com/en-us/library/system.data.oledb.oledbconnection(v=vs.110).aspx
-                using (OleDbConnection conDataBase = new OleDbConnection(constring))
+                using (OleDbConnection conDataBase = new OleDbConnection(Properties.Settings.Default.VocLearningConnectionString)) //this will colse the connection only need to open
                 {
-                    // You need to use a using statement since OleDbCommand implements IDisposable
-                    // more info: http://msdn.microsoft.com/en-us/library/system.data.oledb.oledbcommand(v=vs.110).aspx
                     using (OleDbCommand cmdDataBase = conDataBase.CreateCommand())
                     {
                         cmdDataBase.CommandText =
-                            "SELECT * FROM USERS WHERE User_Name=@username AND Password = @password";
+                            "SELECT ID, First_Name, Last_Name, User_Name, Email_Adress FROM USERS WHERE Username=@username AND Password = @password";
 
                         cmdDataBase.Parameters.AddRange(new OleDbParameter[]
                         {
@@ -252,6 +251,7 @@ namespace KsenesGlosses
                             conDataBase.Open();
 
                         var numberOrResults = 0;
+
 
                         // You need to use a using statement since OleDbDataReader inherits DbDataReader which implements IDisposable
                         // more info: http://msdn.microsoft.com/en-us/library/system.data.common.dbdatareader(v=vs.110).aspx
@@ -297,13 +297,15 @@ namespace KsenesGlosses
                             // increment the failed login counter
                             _failedLoginCounter++;
                         }
+
+
                     }
 
-                }
 
-                // If the user has 3 failed login attempts on a row => close.
-                if (_failedLoginCounter >= 3)
-                    this.Close();
+                    // If the user has 3 failed login attempts on a row => close.
+                    if (_failedLoginCounter >= 3)
+                        this.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -319,6 +321,17 @@ namespace KsenesGlosses
         private void Login_Load(object sender, EventArgs e)
         {
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Email temp = new Email();
+            this.Hide();
+            //show the form
+            temp.Show();
+        }
+
+        
     }
 }
