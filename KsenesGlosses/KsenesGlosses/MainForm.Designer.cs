@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.Logout_button = new System.Windows.Forms.Button();
             this.admin_Button = new System.Windows.Forms.Button();
             this.User_Settings = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.testErrors_label = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.chooseDifficulty_radioButton = new System.Windows.Forms.RadioButton();
             this.anyDifficulty_radioButton = new System.Windows.Forms.RadioButton();
@@ -74,7 +76,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Close = new System.Windows.Forms.PictureBox();
             this.cATEGORIESTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.CATEGORIESTableAdapter();
-            this.testErrors_label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.MainPanel.SuspendLayout();
@@ -95,6 +96,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Logout_button);
             this.panel1.Controls.Add(this.admin_Button);
             this.panel1.Controls.Add(this.User_Settings);
@@ -105,6 +107,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(166, 633);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::KsenesGlosses.Properties.Resources.search;
+            this.button1.Location = new System.Drawing.Point(3, 260);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 79);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Search";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Logout_button
             // 
@@ -130,7 +147,7 @@
             this.admin_Button.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admin_Button.ForeColor = System.Drawing.Color.White;
             this.admin_Button.Image = ((System.Drawing.Image)(resources.GetObject("admin_Button.Image")));
-            this.admin_Button.Location = new System.Drawing.Point(3, 267);
+            this.admin_Button.Location = new System.Drawing.Point(3, 335);
             this.admin_Button.Name = "admin_Button";
             this.admin_Button.Size = new System.Drawing.Size(163, 79);
             this.admin_Button.TabIndex = 3;
@@ -172,6 +189,7 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel3
             // 
@@ -223,6 +241,16 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1030, 499);
             this.MainPanel.TabIndex = 5;
+            // 
+            // testErrors_label
+            // 
+            this.testErrors_label.AutoSize = true;
+            this.testErrors_label.ForeColor = System.Drawing.Color.Firebrick;
+            this.testErrors_label.Location = new System.Drawing.Point(219, 302);
+            this.testErrors_label.Name = "testErrors_label";
+            this.testErrors_label.Size = new System.Drawing.Size(80, 13);
+            this.testErrors_label.TabIndex = 40;
+            this.testErrors_label.Text = "Choose options";
             // 
             // panel6
             // 
@@ -700,16 +728,6 @@
             // 
             this.cATEGORIESTableAdapter.ClearBeforeFill = true;
             // 
-            // testErrors_label
-            // 
-            this.testErrors_label.AutoSize = true;
-            this.testErrors_label.ForeColor = System.Drawing.Color.Firebrick;
-            this.testErrors_label.Location = new System.Drawing.Point(219, 302);
-            this.testErrors_label.Name = "testErrors_label";
-            this.testErrors_label.Size = new System.Drawing.Size(80, 13);
-            this.testErrors_label.TabIndex = 40;
-            this.testErrors_label.Text = "Choose options";
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -796,5 +814,6 @@
         private System.Windows.Forms.BindingSource cATEGORIESBindingSource;
         private VocLearningDataSetTableAdapters.CATEGORIESTableAdapter cATEGORIESTableAdapter;
         private System.Windows.Forms.Label testErrors_label;
+        private System.Windows.Forms.Button button1;
     }
 }

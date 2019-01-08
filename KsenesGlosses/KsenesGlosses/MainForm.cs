@@ -23,6 +23,8 @@ namespace KsenesGlosses
         public int numberOfQuestions = 5;
         //
 
+        Control[] mainPanelControls;
+
         
 
        
@@ -445,10 +447,15 @@ namespace KsenesGlosses
 
         private void button3_Click(object sender, EventArgs e)
         {
+            foreach (Control c in this.MainPanel.Controls)
+            {
+                c.Visible = false;
+            }
+
             AdminMenu.AdminEdit adminMenu = new AdminMenu.AdminEdit();
             adminMenu.Dock = DockStyle.Fill;
             adminMenu.TopLevel = false;
-            MainPanel.Controls.Clear();
+            //MainPanel.Controls.Clear();
             MainPanel.Controls.Add(adminMenu);
             adminMenu.Show();
         }
@@ -458,6 +465,27 @@ namespace KsenesGlosses
             // TODO: This line of code loads data into the 'vocLearningDataSet.CATEGORIES' table. You can move, or remove it, as needed.
             this.cATEGORIESTableAdapter.Fill(this.vocLearningDataSet.CATEGORIES);
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
+            //
+            //loads mainPanel menu into an array so it can be used later for easier disabling/enabling if another button (ex. admin menu) is pressed
+            // controls of mainPanel are changing everytime a user either does a test or some other activity
+            int controlCount = 0;
+
+            //used to count the controls so you can have the length of the array
+            foreach (Control c in this.MainPanel.Controls)
+            {
+                controlCount++;
+            }
+
+            mainPanelControls = new Control[controlCount];
+
+
+            int i = 0;//used only in the foreach
+            foreach (Control c in this.MainPanel.Controls)
+            {
+                mainPanelControls[i] = c;
+                i++;
+            }
         }
 
         private void categoryChoose_RadioButton_CheckedChanged(object sender, EventArgs e)
@@ -486,6 +514,43 @@ namespace KsenesGlosses
                 difficultyFrom_numericUpDown.Enabled = false;
                 difficultyTo_numericUpDown.Enabled = false;
             }
+        }
+
+        /// <summary>
+        /// home button returns to main menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            //set visible false to all controls on the current mainPanel 
+            foreach (Control c in this.MainPanel.Controls)
+            {
+                c.Visible = false;
+            }
+
+            //makes visible only the ones that are needed for the home page that were declared in the mainPanelControls array before
+            for (int i = 0; i < mainPanelControls.Length; i++)
+            {
+                mainPanelControls[i].Visible = true;
+            }
+
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in this.MainPanel.Controls)
+            {
+                c.Visible = false;
+            }
+
+            Search searchForm = new Search();
+            searchForm.Dock = DockStyle.Fill;
+            searchForm.TopLevel = false;
+            MainPanel.Controls.Add(searchForm);
+            searchForm.Show();
         }
     }
 }
