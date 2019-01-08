@@ -43,32 +43,14 @@ namespace KsenesGlosses.Classes
         /// </summary>
       public  void postTestTaken()
         {
-            string strSQL = "INSERT INTO TESTS_TAKEN (User_ID, Test_Level, Test_Type, Correct_Answers, Wrong_Answers, Take_date, Time_to_finish) VALUES(@user_id, @test_level, @test_type, @correct_answers, @wrong_answers, @take_date, @time_to_finish)";
-
+           
 
             try
             {
 
-                using (OleDbConnection connection = new OleDbConnection(Properties.Settings.Default.VocLearningConnectionString)) //this will colse the connection only need to open
-                {
-                    using (OleDbCommand command = new OleDbCommand(strSQL, connection))
-                    {
-
-                        connection.Open();
-                        //set tthe Parameters
-                        command.Parameters.AddWithValue("@user_id", user.user_id);
-                        command.Parameters.AddWithValue("@test_level", 3);
-                        command.Parameters.AddWithValue("@test_type",test_type);
-                        command.Parameters.AddWithValue("@correct_answers", getTotalCorrectAnswers());
-                        command.Parameters.AddWithValue("@wrong_answers", getTotalWrongAnswers());
-                        command.Parameters.AddWithValue("@take_date", DateTime.Now.Date.ToString("d"));
-                        command.Parameters.AddWithValue("@time_to_finish", timeTaken);
-
-                        command.ExecuteScalar();
-                        
-                    }
-                }
-
+                VocLearningDataSetTableAdapters.TESTS_TAKENTableAdapter testTableAdapter = new VocLearningDataSetTableAdapters.TESTS_TAKENTableAdapter();
+                testTableAdapter.InsertTest(user.user_id, 3, test_type, getTotalCorrectAnswers(), getTotalWrongAnswers(), DateTime.Now.Date, DateTime.Now.Date);
+               
             }
             catch (Exception ex)
             {

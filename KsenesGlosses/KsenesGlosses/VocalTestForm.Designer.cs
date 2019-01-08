@@ -36,6 +36,7 @@
             this.nextButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.doneButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listenWord)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,12 +124,24 @@
             this.doneButton.UseVisualStyleBackColor = false;
             this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.label2.Location = new System.Drawing.Point(398, 122);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(361, 24);
+            this.label2.TabIndex = 13;
+            this.label2.Text = " Press the Listen Button To hear agen";
+            // 
             // VocalTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.doneButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nextButton);
@@ -154,5 +167,6 @@
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button doneButton;
+        private System.Windows.Forms.Label label2;
     }
 }

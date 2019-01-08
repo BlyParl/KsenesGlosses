@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using System.Data.OleDb;//this is for the database
 using System.Diagnostics;//this is for debug meesage 
 
@@ -68,33 +69,25 @@ namespace KsenesGlosses
         public static User getUserFromDB(String user_name)
         {
             User user = new User();
-            string strSQL = "SELECT ID, First_Name, Last_Name, User_Name, Email_Adress FROM USERS WHERE(User_Name = @name) ";
+            string strSQL = "SELECT ID, First_Name, Last_Name, User_Name, Email_Adress FROM USERS WHERE(User_Name = @name)";
 
 
             try
             {
+                VocLearningDataSetTableAdapters.USERSTableAdapter userInfoTableAdapter = new VocLearningDataSetTableAdapters.USERSTableAdapter();
+                VocLearningDataSet.USERSDataTable foundUser = userInfoTableAdapter.GetUser(user_name);
 
-                using (OleDbConnection connection = new OleDbConnection(Properties.Settings.Default.VocLearningConnectionString)) //this will colse the connection only need to open
+                //if is found gets the strings and then shows them on the labels they represent
+                if (foundUser.Rows.Count > 0)
                 {
-                    using (OleDbCommand command = new OleDbCommand(strSQL, connection))
-                    {
-
-                        connection.Open();
-                        command.Parameters.AddWithValue("@name", user_name);
-                        OleDbDataReader reader = command.ExecuteReader();
-
-                      
-                        while (reader.Read())
-                        {
-                            user.user_id = reader.GetInt32(0);
-                            user.first_name = reader.GetString(1);
-                            user.last_name = reader.GetString(2);
-                            user.user_name = reader.GetString(3);
-                            user.email_address = reader.GetString(4);
-                        }
-                    }
+                    user.user_id = foundUser.Rows[0].Field<Int32>("ID");
+                    user.first_name = foundUser.Rows[0].Field<String>("First_Name");
+                    user.last_name = foundUser.Rows[0].Field<String>("Last_Name");
+                    user.user_name = foundUser.Rows[0].Field<String>("User_Name");
+                    user.email_address = foundUser.Rows[0].Field<String>("Email_Adress");
+                   
                 }
-
+               
             }
             catch (Exception ex)
             {
