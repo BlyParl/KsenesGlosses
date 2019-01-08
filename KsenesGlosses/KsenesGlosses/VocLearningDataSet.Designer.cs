@@ -8043,7 +8043,7 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Word_ID, [Image], [Level], Category FROM WORD_INFO";
@@ -8058,6 +8058,22 @@ FROM            (((WORD_INFO INNER JOIN
                          GREEK ON WORD_INFO.Word_ID = GREEK.Word_ID) INNER JOIN
                          SPANISH ON WORD_INFO.Word_ID = SPANISH.Word_ID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        WORD_INFO.Word_ID, WORD_INFO.[Image], WORD_INFO.[Level], WORD_INFO.Category, ENGLISH.Word AS [English word], 
+                         ENGLISH.Phonetic AS [English Phonetic], GREEK.Word AS [Greek Word], GREEK.Phonetic AS [Greek Phonetic], SPANISH.Word AS [Spanish Word], 
+                         SPANISH.Phonetic AS [Spanish Phonetic]
+FROM            (((WORD_INFO INNER JOIN
+                         ENGLISH ON WORD_INFO.Word_ID = ENGLISH.Word_ID) INNER JOIN
+                         GREEK ON WORD_INFO.Word_ID = GREEK.Word_ID) INNER JOIN
+                         SPANISH ON WORD_INFO.Word_ID = SPANISH.Word_ID)
+WHERE        (ENGLISH.Word = ?) OR
+                         (GREEK.Word = ?) OR
+                         (SPANISH.Word = ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "English word", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word1", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Greek Word", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word2", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Spanish Word", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8095,6 +8111,46 @@ FROM            (((WORD_INFO INNER JOIN
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual VocLearningDataSet.WORD_INFODataTable getAllWords() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            VocLearningDataSet.WORD_INFODataTable dataTable = new VocLearningDataSet.WORD_INFODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual VocLearningDataSet.WORD_INFODataTable findWord(string Word, string Word1, string Word2) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Word == null)) {
+                throw new global::System.ArgumentNullException("Word");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Word));
+            }
+            if ((Word1 == null)) {
+                throw new global::System.ArgumentNullException("Word1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Word1));
+            }
+            if ((Word2 == null)) {
+                throw new global::System.ArgumentNullException("Word2");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Word2));
+            }
+            VocLearningDataSet.WORD_INFODataTable dataTable = new VocLearningDataSet.WORD_INFODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
