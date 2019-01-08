@@ -282,5 +282,10 @@ namespace KsenesGlosses
                 Password.Text = "constraint";
             }
         }
+
+        private void Create_acc_Load(object sender, EventArgs e)
+        {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+        }
     }
 }

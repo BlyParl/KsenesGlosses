@@ -156,6 +156,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Forgot Password";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Border
             // 
@@ -287,6 +288,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Login_MouseClick);
             this.Border.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

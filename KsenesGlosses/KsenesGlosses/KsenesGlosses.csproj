@@ -31,6 +31,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="ImageComboBox, Version=1.0.2008.18717, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
@@ -103,6 +111,12 @@
     </Compile>
     <Compile Include="Create_acc.designer.cs">
       <DependentUpon>Create_acc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Email.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Email.Designer.cs">
+      <DependentUpon>Email.cs</DependentUpon>
     </Compile>
     <Compile Include="User_Settings.cs">
       <SubType>Form</SubType>
@@ -179,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Create_acc.resx">
       <DependentUpon>Create_acc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email.resx">
+      <DependentUpon>Email.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImageTestForm.resx">
       <DependentUpon>ImageTestForm.cs</DependentUpon>
@@ -293,6 +310,7 @@
     <None Include="Resources\username_blue.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="logo.ico" />
     <Content Include="VocLearning.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

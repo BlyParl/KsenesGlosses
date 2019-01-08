@@ -45,5 +45,10 @@ namespace KsenesGlosses
             //apothikeuei to teleuteo simio pou afise to parathiro
             lastPoint = new Point(e.X, e.Y);
         }
+
+        private void User_Settings_Load(object sender, EventArgs e)
+        {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+        }
     }
 }
