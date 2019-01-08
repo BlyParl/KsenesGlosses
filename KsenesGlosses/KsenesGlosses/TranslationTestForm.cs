@@ -128,7 +128,10 @@ namespace KsenesGlosses
 
             testTaken = new TestTaken(test, user, answers,"Translation", 0);  //create testtake to do the work for the answers 
 
-           
+           if(languegeYouKnow!="English")
+            {
+                speakButton.Enabled = false;
+            }
            
 
         }
@@ -173,10 +176,7 @@ namespace KsenesGlosses
             voice.wordInput(test.questions[count].word);
             voice.startRec();
             voice.recEngine.SpeechRecognized += recEngine_SpeechRecognized;
-            if (voice.answer!=null)
-            {                
-               
-            }
+           
         }
         void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)   //Speech Rec e returns what word we said  from the list  (christos)  
         {
