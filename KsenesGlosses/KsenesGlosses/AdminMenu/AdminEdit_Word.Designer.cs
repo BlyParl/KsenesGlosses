@@ -33,48 +33,48 @@
             this.CancelChanges_Button = new System.Windows.Forms.Button();
             this.SaveChanges_button = new System.Windows.Forms.Button();
             this.deleteSelected_Button = new System.Windows.Forms.Button();
+            this.spanishWords_DataGridView = new System.Windows.Forms.DataGridView();
+            this.wordIDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wordDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneticDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPANISHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vocLearningDataSet = new KsenesGlosses.VocLearningDataSet();
-            this.wORDINFOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wORD_INFOTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.WORD_INFOTableAdapter();
+            this.englishWords_DataGridView = new System.Windows.Forms.DataGridView();
+            this.wordIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wordDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneticDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eNGLISHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eNGLISHTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.ENGLISHTableAdapter();
-            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uSERSTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.USERSTableAdapter();
+            this.greekWords_DataGridView = new System.Windows.Forms.DataGridView();
+            this.wordIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneticDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gREEKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wordsInfo_DataGridView = new System.Windows.Forms.DataGridView();
             this.wordIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.levelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gREEKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wORDINFOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wORD_INFOTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.WORD_INFOTableAdapter();
+            this.eNGLISHTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.ENGLISHTableAdapter();
+            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uSERSTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.USERSTableAdapter();
             this.gREEKTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.GREEKTableAdapter();
-            this.greekWords_DataGridView = new System.Windows.Forms.DataGridView();
-            this.wordIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneticDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.englishWords_DataGridView = new System.Windows.Forms.DataGridView();
-            this.wordIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wordDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneticDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spanishWords_DataGridView = new System.Windows.Forms.DataGridView();
-            this.sPANISHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sPANISHTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.SPANISHTableAdapter();
-            this.wordIDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wordDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneticDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vocLearningDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wORDINFOBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eNGLISHBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wordsInfo_DataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gREEKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.greekWords_DataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.englishWords_DataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spanishWords_DataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPANISHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vocLearningDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.englishWords_DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eNGLISHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greekWords_DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gREEKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wordsInfo_DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wORDINFOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -103,6 +103,7 @@
             // 
             // CancelChanges_Button
             // 
+            this.CancelChanges_Button.Font = new System.Drawing.Font("Century Gothic", 8.2F);
             this.CancelChanges_Button.Location = new System.Drawing.Point(144, 12);
             this.CancelChanges_Button.Name = "CancelChanges_Button";
             this.CancelChanges_Button.Size = new System.Drawing.Size(101, 23);
@@ -113,6 +114,7 @@
             // 
             // SaveChanges_button
             // 
+            this.SaveChanges_button.Font = new System.Drawing.Font("Century Gothic", 8.2F);
             this.SaveChanges_button.Location = new System.Drawing.Point(251, 12);
             this.SaveChanges_button.Name = "SaveChanges_button";
             this.SaveChanges_button.Size = new System.Drawing.Size(101, 23);
@@ -123,6 +125,7 @@
             // 
             // deleteSelected_Button
             // 
+            this.deleteSelected_Button.Font = new System.Drawing.Font("Century Gothic", 8.2F);
             this.deleteSelected_Button.Location = new System.Drawing.Point(12, 12);
             this.deleteSelected_Button.Name = "deleteSelected_Button";
             this.deleteSelected_Button.Size = new System.Drawing.Size(126, 23);
@@ -131,37 +134,124 @@
             this.deleteSelected_Button.UseVisualStyleBackColor = true;
             this.deleteSelected_Button.Click += new System.EventHandler(this.deleteUser_Button_Click);
             // 
+            // spanishWords_DataGridView
+            // 
+            this.spanishWords_DataGridView.AutoGenerateColumns = false;
+            this.spanishWords_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.spanishWords_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.wordIDDataGridViewTextBoxColumn3,
+            this.wordDataGridViewTextBoxColumn2,
+            this.phoneticDataGridViewTextBoxColumn2});
+            this.spanishWords_DataGridView.DataSource = this.sPANISHBindingSource;
+            this.spanishWords_DataGridView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.spanishWords_DataGridView.Location = new System.Drawing.Point(720, 0);
+            this.spanishWords_DataGridView.Name = "spanishWords_DataGridView";
+            this.spanishWords_DataGridView.Size = new System.Drawing.Size(240, 385);
+            this.spanishWords_DataGridView.TabIndex = 3;
+            // 
+            // wordIDDataGridViewTextBoxColumn3
+            // 
+            this.wordIDDataGridViewTextBoxColumn3.DataPropertyName = "Word_ID";
+            this.wordIDDataGridViewTextBoxColumn3.HeaderText = "Word_ID";
+            this.wordIDDataGridViewTextBoxColumn3.Name = "wordIDDataGridViewTextBoxColumn3";
+            // 
+            // wordDataGridViewTextBoxColumn2
+            // 
+            this.wordDataGridViewTextBoxColumn2.DataPropertyName = "Word";
+            this.wordDataGridViewTextBoxColumn2.HeaderText = "Spanish Word";
+            this.wordDataGridViewTextBoxColumn2.Name = "wordDataGridViewTextBoxColumn2";
+            // 
+            // phoneticDataGridViewTextBoxColumn2
+            // 
+            this.phoneticDataGridViewTextBoxColumn2.DataPropertyName = "Phonetic";
+            this.phoneticDataGridViewTextBoxColumn2.HeaderText = "Spanish Phonetic";
+            this.phoneticDataGridViewTextBoxColumn2.Name = "phoneticDataGridViewTextBoxColumn2";
+            // 
+            // sPANISHBindingSource
+            // 
+            this.sPANISHBindingSource.DataMember = "SPANISH";
+            this.sPANISHBindingSource.DataSource = this.vocLearningDataSet;
+            // 
             // vocLearningDataSet
             // 
             this.vocLearningDataSet.DataSetName = "VocLearningDataSet";
             this.vocLearningDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // wORDINFOBindingSource
+            // englishWords_DataGridView
             // 
-            this.wORDINFOBindingSource.DataMember = "WORD_INFO";
-            this.wORDINFOBindingSource.DataSource = this.vocLearningDataSet;
+            this.englishWords_DataGridView.AutoGenerateColumns = false;
+            this.englishWords_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.englishWords_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.wordIDDataGridViewTextBoxColumn2,
+            this.wordDataGridViewTextBoxColumn1,
+            this.phoneticDataGridViewTextBoxColumn1});
+            this.englishWords_DataGridView.DataSource = this.eNGLISHBindingSource;
+            this.englishWords_DataGridView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.englishWords_DataGridView.Location = new System.Drawing.Point(480, 0);
+            this.englishWords_DataGridView.Name = "englishWords_DataGridView";
+            this.englishWords_DataGridView.Size = new System.Drawing.Size(240, 385);
+            this.englishWords_DataGridView.TabIndex = 2;
             // 
-            // wORD_INFOTableAdapter
+            // wordIDDataGridViewTextBoxColumn2
             // 
-            this.wORD_INFOTableAdapter.ClearBeforeFill = true;
+            this.wordIDDataGridViewTextBoxColumn2.DataPropertyName = "Word_ID";
+            this.wordIDDataGridViewTextBoxColumn2.HeaderText = "Word_ID";
+            this.wordIDDataGridViewTextBoxColumn2.Name = "wordIDDataGridViewTextBoxColumn2";
+            // 
+            // wordDataGridViewTextBoxColumn1
+            // 
+            this.wordDataGridViewTextBoxColumn1.DataPropertyName = "Word";
+            this.wordDataGridViewTextBoxColumn1.HeaderText = "English Word";
+            this.wordDataGridViewTextBoxColumn1.Name = "wordDataGridViewTextBoxColumn1";
+            // 
+            // phoneticDataGridViewTextBoxColumn1
+            // 
+            this.phoneticDataGridViewTextBoxColumn1.DataPropertyName = "Phonetic";
+            this.phoneticDataGridViewTextBoxColumn1.HeaderText = "English Phonetic";
+            this.phoneticDataGridViewTextBoxColumn1.Name = "phoneticDataGridViewTextBoxColumn1";
             // 
             // eNGLISHBindingSource
             // 
             this.eNGLISHBindingSource.DataMember = "ENGLISH";
             this.eNGLISHBindingSource.DataSource = this.vocLearningDataSet;
             // 
-            // eNGLISHTableAdapter
+            // greekWords_DataGridView
             // 
-            this.eNGLISHTableAdapter.ClearBeforeFill = true;
+            this.greekWords_DataGridView.AutoGenerateColumns = false;
+            this.greekWords_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.greekWords_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.wordIDDataGridViewTextBoxColumn1,
+            this.wordDataGridViewTextBoxColumn,
+            this.phoneticDataGridViewTextBoxColumn});
+            this.greekWords_DataGridView.DataSource = this.gREEKBindingSource;
+            this.greekWords_DataGridView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.greekWords_DataGridView.Location = new System.Drawing.Point(240, 0);
+            this.greekWords_DataGridView.Name = "greekWords_DataGridView";
+            this.greekWords_DataGridView.Size = new System.Drawing.Size(240, 385);
+            this.greekWords_DataGridView.TabIndex = 1;
             // 
-            // uSERSBindingSource
+            // wordIDDataGridViewTextBoxColumn1
             // 
-            this.uSERSBindingSource.DataMember = "USERS";
-            this.uSERSBindingSource.DataSource = this.vocLearningDataSet;
+            this.wordIDDataGridViewTextBoxColumn1.DataPropertyName = "Word_ID";
+            this.wordIDDataGridViewTextBoxColumn1.HeaderText = "Word_ID";
+            this.wordIDDataGridViewTextBoxColumn1.Name = "wordIDDataGridViewTextBoxColumn1";
             // 
-            // uSERSTableAdapter
+            // wordDataGridViewTextBoxColumn
             // 
-            this.uSERSTableAdapter.ClearBeforeFill = true;
+            this.wordDataGridViewTextBoxColumn.DataPropertyName = "Word";
+            this.wordDataGridViewTextBoxColumn.HeaderText = "Greek Word";
+            this.wordDataGridViewTextBoxColumn.Name = "wordDataGridViewTextBoxColumn";
+            // 
+            // phoneticDataGridViewTextBoxColumn
+            // 
+            this.phoneticDataGridViewTextBoxColumn.DataPropertyName = "Phonetic";
+            this.phoneticDataGridViewTextBoxColumn.HeaderText = "Greek Phonetic";
+            this.phoneticDataGridViewTextBoxColumn.Name = "phoneticDataGridViewTextBoxColumn";
+            // 
+            // gREEKBindingSource
+            // 
+            this.gREEKBindingSource.DataMember = "GREEK";
+            this.gREEKBindingSource.DataSource = this.vocLearningDataSet;
             // 
             // wordsInfo_DataGridView
             // 
@@ -204,122 +294,35 @@
             this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
             this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             // 
-            // gREEKBindingSource
+            // wORDINFOBindingSource
             // 
-            this.gREEKBindingSource.DataMember = "GREEK";
-            this.gREEKBindingSource.DataSource = this.vocLearningDataSet;
+            this.wORDINFOBindingSource.DataMember = "WORD_INFO";
+            this.wORDINFOBindingSource.DataSource = this.vocLearningDataSet;
+            // 
+            // wORD_INFOTableAdapter
+            // 
+            this.wORD_INFOTableAdapter.ClearBeforeFill = true;
+            // 
+            // eNGLISHTableAdapter
+            // 
+            this.eNGLISHTableAdapter.ClearBeforeFill = true;
+            // 
+            // uSERSBindingSource
+            // 
+            this.uSERSBindingSource.DataMember = "USERS";
+            this.uSERSBindingSource.DataSource = this.vocLearningDataSet;
+            // 
+            // uSERSTableAdapter
+            // 
+            this.uSERSTableAdapter.ClearBeforeFill = true;
             // 
             // gREEKTableAdapter
             // 
             this.gREEKTableAdapter.ClearBeforeFill = true;
             // 
-            // greekWords_DataGridView
-            // 
-            this.greekWords_DataGridView.AutoGenerateColumns = false;
-            this.greekWords_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.greekWords_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.wordIDDataGridViewTextBoxColumn1,
-            this.wordDataGridViewTextBoxColumn,
-            this.phoneticDataGridViewTextBoxColumn});
-            this.greekWords_DataGridView.DataSource = this.gREEKBindingSource;
-            this.greekWords_DataGridView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.greekWords_DataGridView.Location = new System.Drawing.Point(240, 0);
-            this.greekWords_DataGridView.Name = "greekWords_DataGridView";
-            this.greekWords_DataGridView.Size = new System.Drawing.Size(240, 385);
-            this.greekWords_DataGridView.TabIndex = 1;
-            // 
-            // wordIDDataGridViewTextBoxColumn1
-            // 
-            this.wordIDDataGridViewTextBoxColumn1.DataPropertyName = "Word_ID";
-            this.wordIDDataGridViewTextBoxColumn1.HeaderText = "Word_ID";
-            this.wordIDDataGridViewTextBoxColumn1.Name = "wordIDDataGridViewTextBoxColumn1";
-            // 
-            // wordDataGridViewTextBoxColumn
-            // 
-            this.wordDataGridViewTextBoxColumn.DataPropertyName = "Word";
-            this.wordDataGridViewTextBoxColumn.HeaderText = "Greek Word";
-            this.wordDataGridViewTextBoxColumn.Name = "wordDataGridViewTextBoxColumn";
-            // 
-            // phoneticDataGridViewTextBoxColumn
-            // 
-            this.phoneticDataGridViewTextBoxColumn.DataPropertyName = "Phonetic";
-            this.phoneticDataGridViewTextBoxColumn.HeaderText = "Greek Phonetic";
-            this.phoneticDataGridViewTextBoxColumn.Name = "phoneticDataGridViewTextBoxColumn";
-            // 
-            // englishWords_DataGridView
-            // 
-            this.englishWords_DataGridView.AutoGenerateColumns = false;
-            this.englishWords_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.englishWords_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.wordIDDataGridViewTextBoxColumn2,
-            this.wordDataGridViewTextBoxColumn1,
-            this.phoneticDataGridViewTextBoxColumn1});
-            this.englishWords_DataGridView.DataSource = this.eNGLISHBindingSource;
-            this.englishWords_DataGridView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.englishWords_DataGridView.Location = new System.Drawing.Point(480, 0);
-            this.englishWords_DataGridView.Name = "englishWords_DataGridView";
-            this.englishWords_DataGridView.Size = new System.Drawing.Size(240, 385);
-            this.englishWords_DataGridView.TabIndex = 2;
-            // 
-            // wordIDDataGridViewTextBoxColumn2
-            // 
-            this.wordIDDataGridViewTextBoxColumn2.DataPropertyName = "Word_ID";
-            this.wordIDDataGridViewTextBoxColumn2.HeaderText = "Word_ID";
-            this.wordIDDataGridViewTextBoxColumn2.Name = "wordIDDataGridViewTextBoxColumn2";
-            // 
-            // wordDataGridViewTextBoxColumn1
-            // 
-            this.wordDataGridViewTextBoxColumn1.DataPropertyName = "Word";
-            this.wordDataGridViewTextBoxColumn1.HeaderText = "English Word";
-            this.wordDataGridViewTextBoxColumn1.Name = "wordDataGridViewTextBoxColumn1";
-            // 
-            // phoneticDataGridViewTextBoxColumn1
-            // 
-            this.phoneticDataGridViewTextBoxColumn1.DataPropertyName = "Phonetic";
-            this.phoneticDataGridViewTextBoxColumn1.HeaderText = "English Phonetic";
-            this.phoneticDataGridViewTextBoxColumn1.Name = "phoneticDataGridViewTextBoxColumn1";
-            // 
-            // spanishWords_DataGridView
-            // 
-            this.spanishWords_DataGridView.AutoGenerateColumns = false;
-            this.spanishWords_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.spanishWords_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.wordIDDataGridViewTextBoxColumn3,
-            this.wordDataGridViewTextBoxColumn2,
-            this.phoneticDataGridViewTextBoxColumn2});
-            this.spanishWords_DataGridView.DataSource = this.sPANISHBindingSource;
-            this.spanishWords_DataGridView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.spanishWords_DataGridView.Location = new System.Drawing.Point(720, 0);
-            this.spanishWords_DataGridView.Name = "spanishWords_DataGridView";
-            this.spanishWords_DataGridView.Size = new System.Drawing.Size(240, 385);
-            this.spanishWords_DataGridView.TabIndex = 3;
-            // 
-            // sPANISHBindingSource
-            // 
-            this.sPANISHBindingSource.DataMember = "SPANISH";
-            this.sPANISHBindingSource.DataSource = this.vocLearningDataSet;
-            // 
             // sPANISHTableAdapter
             // 
             this.sPANISHTableAdapter.ClearBeforeFill = true;
-            // 
-            // wordIDDataGridViewTextBoxColumn3
-            // 
-            this.wordIDDataGridViewTextBoxColumn3.DataPropertyName = "Word_ID";
-            this.wordIDDataGridViewTextBoxColumn3.HeaderText = "Word_ID";
-            this.wordIDDataGridViewTextBoxColumn3.Name = "wordIDDataGridViewTextBoxColumn3";
-            // 
-            // wordDataGridViewTextBoxColumn2
-            // 
-            this.wordDataGridViewTextBoxColumn2.DataPropertyName = "Word";
-            this.wordDataGridViewTextBoxColumn2.HeaderText = "Spanish Word";
-            this.wordDataGridViewTextBoxColumn2.Name = "wordDataGridViewTextBoxColumn2";
-            // 
-            // phoneticDataGridViewTextBoxColumn2
-            // 
-            this.phoneticDataGridViewTextBoxColumn2.DataPropertyName = "Phonetic";
-            this.phoneticDataGridViewTextBoxColumn2.HeaderText = "Spanish Phonetic";
-            this.phoneticDataGridViewTextBoxColumn2.Name = "phoneticDataGridViewTextBoxColumn2";
             // 
             // AdminEdit_Word
             // 
@@ -336,16 +339,16 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vocLearningDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wORDINFOBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eNGLISHBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wordsInfo_DataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gREEKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.greekWords_DataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.englishWords_DataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spanishWords_DataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPANISHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vocLearningDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.englishWords_DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eNGLISHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greekWords_DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gREEKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wordsInfo_DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wORDINFOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

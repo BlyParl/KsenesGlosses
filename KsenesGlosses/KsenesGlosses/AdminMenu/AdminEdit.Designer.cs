@@ -53,9 +53,11 @@
             // Words
             // 
             this.Words.AutoSize = true;
+            this.Words.Font = new System.Drawing.Font("Century Gothic", 8.2F);
+            this.Words.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Words.Location = new System.Drawing.Point(12, 35);
             this.Words.Name = "Words";
-            this.Words.Size = new System.Drawing.Size(56, 17);
+            this.Words.Size = new System.Drawing.Size(59, 20);
             this.Words.TabIndex = 1;
             this.Words.TabStop = true;
             this.Words.Text = "Words";
@@ -65,9 +67,11 @@
             // Users_RadioButton
             // 
             this.Users_RadioButton.AutoSize = true;
+            this.Users_RadioButton.Font = new System.Drawing.Font("Century Gothic", 8.2F);
+            this.Users_RadioButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Users_RadioButton.Location = new System.Drawing.Point(12, 12);
             this.Users_RadioButton.Name = "Users_RadioButton";
-            this.Users_RadioButton.Size = new System.Drawing.Size(52, 17);
+            this.Users_RadioButton.Size = new System.Drawing.Size(52, 20);
             this.Users_RadioButton.TabIndex = 0;
             this.Users_RadioButton.TabStop = true;
             this.Users_RadioButton.Text = "Users";

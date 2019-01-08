@@ -33,25 +33,25 @@
             this.CancelChanges_Button = new System.Windows.Forms.Button();
             this.SaveChanges_button = new System.Windows.Forms.Button();
             this.deleteUser_Button = new System.Windows.Forms.Button();
-            this.vocLearningDataSet = new KsenesGlosses.VocLearningDataSet();
-            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uSERSTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.USERSTableAdapter();
             this.Users_dataGridView = new System.Windows.Forms.DataGridView();
-            this.uSERSBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailAdressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uSERSBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vocLearningDataSet = new KsenesGlosses.VocLearningDataSet();
+            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uSERSTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.USERSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vocLearningDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Users_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vocLearningDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -76,6 +76,7 @@
             // 
             // CancelChanges_Button
             // 
+            this.CancelChanges_Button.Font = new System.Drawing.Font("Century Gothic", 8.2F);
             this.CancelChanges_Button.Location = new System.Drawing.Point(144, 12);
             this.CancelChanges_Button.Name = "CancelChanges_Button";
             this.CancelChanges_Button.Size = new System.Drawing.Size(101, 23);
@@ -86,6 +87,7 @@
             // 
             // SaveChanges_button
             // 
+            this.SaveChanges_button.Font = new System.Drawing.Font("Century Gothic", 8.2F);
             this.SaveChanges_button.Location = new System.Drawing.Point(251, 12);
             this.SaveChanges_button.Name = "SaveChanges_button";
             this.SaveChanges_button.Size = new System.Drawing.Size(101, 23);
@@ -96,6 +98,8 @@
             // 
             // deleteUser_Button
             // 
+            this.deleteUser_Button.Font = new System.Drawing.Font("Century Gothic", 8.2F);
+            this.deleteUser_Button.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.deleteUser_Button.Location = new System.Drawing.Point(12, 12);
             this.deleteUser_Button.Name = "deleteUser_Button";
             this.deleteUser_Button.Size = new System.Drawing.Size(126, 23);
@@ -103,20 +107,6 @@
             this.deleteUser_Button.Text = "Delete Selected User";
             this.deleteUser_Button.UseVisualStyleBackColor = true;
             this.deleteUser_Button.Click += new System.EventHandler(this.deleteUser_Button_Click);
-            // 
-            // vocLearningDataSet
-            // 
-            this.vocLearningDataSet.DataSetName = "VocLearningDataSet";
-            this.vocLearningDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // uSERSBindingSource
-            // 
-            this.uSERSBindingSource.DataMember = "USERS";
-            this.uSERSBindingSource.DataSource = this.vocLearningDataSet;
-            // 
-            // uSERSTableAdapter
-            // 
-            this.uSERSTableAdapter.ClearBeforeFill = true;
             // 
             // Users_dataGridView
             // 
@@ -135,11 +125,6 @@
             this.Users_dataGridView.Name = "Users_dataGridView";
             this.Users_dataGridView.Size = new System.Drawing.Size(800, 386);
             this.Users_dataGridView.TabIndex = 0;
-            // 
-            // uSERSBindingSource1
-            // 
-            this.uSERSBindingSource1.DataMember = "USERS";
-            this.uSERSBindingSource1.DataSource = this.vocLearningDataSet;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -177,6 +162,25 @@
             this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             // 
+            // uSERSBindingSource1
+            // 
+            this.uSERSBindingSource1.DataMember = "USERS";
+            this.uSERSBindingSource1.DataSource = this.vocLearningDataSet;
+            // 
+            // vocLearningDataSet
+            // 
+            this.vocLearningDataSet.DataSetName = "VocLearningDataSet";
+            this.vocLearningDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uSERSBindingSource
+            // 
+            this.uSERSBindingSource.DataMember = "USERS";
+            this.uSERSBindingSource.DataSource = this.vocLearningDataSet;
+            // 
+            // uSERSTableAdapter
+            // 
+            this.uSERSTableAdapter.ClearBeforeFill = true;
+            // 
             // AdminEdit_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,10 +196,10 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vocLearningDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Users_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vocLearningDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
