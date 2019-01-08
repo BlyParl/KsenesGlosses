@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -21,6 +22,8 @@ namespace KsenesGlosses
 
         // gia na kinite to frame
         Point lastPoint;
+        String pass;
+        VocLearningDataSetTableAdapters.USERSTableAdapter usersTableAdapter;
 
         private void Border_MouseMove(object sender, MouseEventArgs e)
         {
@@ -76,36 +79,91 @@ namespace KsenesGlosses
                 email_textbox.Text = "email";
             }
 
-            email(sender, e);
+            if(Checkemail(email_textbox.Text))
+            {
 
-            MessageBox.Show("Email Send");
+                email(sender, e);
+
+                MessageBox.Show("Email Send");
+
+            }
         }
 
         protected void email(object sender, EventArgs e)
         {
-            var fromAddress = new MailAddress("from@gmail.com", "From Name");
-            var toAddress = new MailAddress("to@gmail.com", "To Name");
-            const string fromPassword = "password";
-            const string subject = "Subject";
-            const string body = "Body";
+            try
+            {
+                var fromAddress = new MailAddress("ksenesglosses1@gmail.com", "From Name");
+                var toAddress = new MailAddress(email_textbox.Text, "To Name");
+                const string fromPassword = "a455288!";
+                const string subject = "Account informations from KsenesGlosses";
+                string body = "Your new Password is:"+pass;
 
-            var smtp = new SmtpClient
-            {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-            };
-            using (var message = new MailMessage(fromAddress, toAddress)
-            {
-                Subject = subject,
-                Body = body
-            })
-            {
-                smtp.Send(message);
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private bool Checkemail(string email)
+        {
+            try
+            {
+               
+                int count = (Int32)usersTableAdapter.Counter_by_email(email);
+               
+
+                if (count == 1)
+                {
+                    pass = RandomString(9);
+                    usersTableAdapter.Updata_password(pass, email);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Email not found");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            return false;
+        }
+
+
+        private static Random random = new Random();
+        public static string RandomString(int length)
+        {
+            const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        private void Email_Load(object sender, EventArgs e)
+        {
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            usersTableAdapter = new VocLearningDataSetTableAdapters.USERSTableAdapter();
         }
     }
 

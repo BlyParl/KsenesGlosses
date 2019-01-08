@@ -145,6 +145,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Email";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Email_Load);
             this.Click += new System.EventHandler(this.Email_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Border.ResumeLayout(false);

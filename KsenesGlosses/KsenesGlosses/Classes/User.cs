@@ -105,6 +105,49 @@ namespace KsenesGlosses
         }
 
         /// <summary>
+        /// returns a User searching with email in Database
+        /// </summary>
+        /// <param name="user_name"></param>
+        /// <returns>Type User from Database</returns>
+        public static User getUserFromDBWithEmail(String email)
+        {
+            User user = new User();
+            string strSQL = "SELECT ID, First_Name, Last_Name, User_Name, Email_Adress FROM USERS WHERE(Email_Adress = @email) ";
+
+
+            try
+            {
+
+                using (OleDbConnection connection = new OleDbConnection(Properties.Settings.Default.VocLearningConnectionString)) //this will colse the connection only need to open
+                {
+                    using (OleDbCommand command = new OleDbCommand(strSQL, connection))
+                    {
+
+                        connection.Open();
+                        command.Parameters.AddWithValue("@email", email);
+                        OleDbDataReader reader = command.ExecuteReader();
+
+
+                        while (reader.Read())
+                        {
+                            user.user_id = reader.GetInt32(0);
+                            user.first_name = reader.GetString(1);
+                            user.last_name = reader.GetString(2);
+                            user.user_name = reader.GetString(3);
+                            user.email_address = reader.GetString(4);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+
+            }
+            return user;
+        }
+        /// <summary>
         /// Returns true if username and password exist in database.
         /// This method will not encrypt the password, it should be done using encryptPassword(String password).
         /// </summary>
