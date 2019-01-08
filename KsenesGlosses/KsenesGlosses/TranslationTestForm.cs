@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using KsenesGlosses.Classes;
 using System.Diagnostics;
+using System.Speech.Recognition;
+
 
 namespace KsenesGlosses
 {
@@ -23,14 +25,17 @@ namespace KsenesGlosses
 
         int count = 0;//a number to navigate  questions[]
 
-        int nofq = 5;//number of questions
+        int nofq;//number of questions
+
+        string languegeToLearn;
+
+        string languegeYouKnow;
 
         string[] answers;
         public TranslationTestForm()
         {
             InitializeComponent();
-
-            
+           
         }
         private User user;
 
@@ -42,11 +47,37 @@ namespace KsenesGlosses
             get { return user; }
             set { user = value; }
         }
+        /// <summary>
+        /// Number of questons 
+        /// </summary>
+        public int NoOfQuestons
+        {
+            get { return nofq; }
+            set { nofq = value; }
+        }
+
+        /// <summary>
+        /// Languegw you want to learn
+        /// </summary>
+        public string LanguegeToLearn
+        {
+            get { return languegeToLearn; }
+            set { languegeToLearn = value; }
+        }
+        /// <summary>
+        /// Languegw you already know
+        /// </summary>
+        public string LanguegeYouKnow
+        {
+            get { return languegeYouKnow; }
+            set { languegeYouKnow = value; }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            progressBar1.Step = progressBar1.Maximum / (nofq - 1); //sets the progres bar length 
+            progressBar1.Step = 1; //sets the progres bar length 
             progressBar1.PerformStep(); //progress bar goes forward
-            if (progressBar1.Value == 100) //track the progresbar if it is full disable the button
+            if (progressBar1.Value == nofq-1 ) //track the progresbar if it is full disable the button
             {
                 nextButton.Enabled = false;
                 previousButton.Enabled = true;
@@ -59,8 +90,10 @@ namespace KsenesGlosses
             count++;
             wordToTranslateTextBox.Text = test.questions[count].word;//put the word into the screen
             answerTextBox.Text = answers[count];
+
            
-           
+
+
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
@@ -81,11 +114,11 @@ namespace KsenesGlosses
         private void TranslationTestForm_Load(object sender, EventArgs e)
         {
             
-            test = Test.createRandomTest(nofq, 2, 4, "", "", ""); //create a test 
+            test = Test.createRandomTest(nofq, 2, 4, "", languegeYouKnow, languegeToLearn); //create a test 
 
-           
+            progressBar1.Maximum = nofq-1;
 
-            progressBar1.Step = progressBar1.Maximum/(nofq-1); //sets the progres bar length 
+            progressBar1.Step = 1; //sets the progres bar length 
 
             wordToTranslateTextBox.Text = test.questions[0].word; // first word of questions[] goes into the screen
 
@@ -94,13 +127,15 @@ namespace KsenesGlosses
             previousButton.Enabled = false; //disable the previus button at the start 
 
             testTaken = new TestTaken(test, user, answers,"Translation", 0);  //create testtake to do the work for the answers 
+
+           
            
 
         }
 
         private void previousButton_Click(object sender, EventArgs e)
         {
-            progressBar1.Step = - progressBar1.Maximum / (nofq-1); //sets the progres bar to go reverse
+            progressBar1.Step = - 1; //sets the progres bar to go reverse
             progressBar1.PerformStep();
 
             if (progressBar1.Value == 0)
@@ -114,6 +149,8 @@ namespace KsenesGlosses
             wordToTranslateTextBox.Text = test.questions[count].word;
 
             answerTextBox.Text = answers[count];
+
+            
         }
 
         private void answerTextBox_TextChanged(object sender, EventArgs e)
@@ -128,6 +165,24 @@ namespace KsenesGlosses
             previousButton.Enabled = false;
             doneButton.Enabled = false;
             testTaken.postTestTaken();//here we post the results in the DB
+        }
+
+        private void speakButton_Click(object sender, EventArgs e)
+        {
+            Voice voice = new Voice();
+            voice.wordInput(test.questions[count].word);
+            voice.startRec();
+            voice.recEngine.SpeechRecognized += recEngine_SpeechRecognized;
+            if (voice.answer!=null)
+            {                
+               
+            }
+        }
+        void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)   //Speech Rec e returns what word we said  from the list  (christos)  
+        {
+
+            answerTextBox.Text = e.Result.Text;
+
         }
     }
 }

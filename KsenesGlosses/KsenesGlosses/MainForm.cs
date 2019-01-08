@@ -69,6 +69,9 @@ namespace KsenesGlosses
 
                     TranslationTestForm TranslationTest = new TranslationTestForm();
                     TranslationTest.LoggedUser = user; // transfer the user info to the other form
+                    TranslationTest.NoOfQuestons = numberOfQuestions; //transfer the No Of questions
+                    TranslationTest.LanguegeToLearn = languageToLearn;//transfer the languege to learn
+                    TranslationTest.LanguegeYouKnow = languageKnown;//transfer the known languege
                     TranslationTest.Dock = DockStyle.Fill;
                     TranslationTest.TopLevel = false;
                     MainPanel.Controls.Add(TranslationTest);
@@ -94,6 +97,9 @@ namespace KsenesGlosses
 
                     VocalTestForm vocal = new VocalTestForm();
                     vocal.LoggedUser = user;// transfer the user info to the other form
+                    vocal.NoOfQuestons = numberOfQuestions; //transfer the No Of questions
+                    vocal.LanguegeToLearn = languageToLearn;//transfer the languege to learn
+                    vocal.LanguegeYouKnow = languageKnown;//transfer the known languege
                     vocal.Dock = DockStyle.Fill;
                     vocal.TopLevel = false;
                     MainPanel.Controls.Add(vocal);

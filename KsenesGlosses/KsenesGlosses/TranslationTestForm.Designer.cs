@@ -36,6 +36,7 @@
             this.wordToTranslateTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.doneButton = new System.Windows.Forms.Button();
+            this.speakButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -135,12 +136,28 @@
             this.doneButton.UseVisualStyleBackColor = false;
             this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
             // 
+            // speakButton
+            // 
+            this.speakButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.speakButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.speakButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.speakButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.speakButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.speakButton.Location = new System.Drawing.Point(478, 119);
+            this.speakButton.Name = "speakButton";
+            this.speakButton.Size = new System.Drawing.Size(100, 30);
+            this.speakButton.TabIndex = 12;
+            this.speakButton.Text = "Speak";
+            this.speakButton.UseVisualStyleBackColor = false;
+            this.speakButton.Click += new System.EventHandler(this.speakButton_Click);
+            // 
             // TranslationTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.speakButton);
             this.Controls.Add(this.doneButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.wordToTranslateTextBox);
@@ -168,5 +185,6 @@
         private System.Windows.Forms.TextBox wordToTranslateTextBox;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button doneButton;
+        private System.Windows.Forms.Button speakButton;
     }
 }

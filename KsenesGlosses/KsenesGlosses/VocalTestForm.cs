@@ -22,7 +22,11 @@ namespace KsenesGlosses
 
         int count = 0;//a number to navigate  questions[]
 
-        int nofq = 5;//number of questions
+        int nofq;//number of questions
+
+        string languegeToLearn;
+
+        string languegeYouKnow;
 
         string[] answers;
 
@@ -37,6 +41,32 @@ namespace KsenesGlosses
             set { user = value; }
         }
 
+        /// <summary>
+        /// Number of questons 
+        /// </summary>
+        public int NoOfQuestons
+        {
+            get { return nofq; }
+            set { nofq = value; }
+        }
+
+        /// <summary>
+        /// Languegw you want to learn
+        /// </summary>
+        public string LanguegeToLearn
+        {
+            get { return languegeToLearn; }
+            set { languegeToLearn = value; }
+        }
+        /// <summary>
+        /// Languegw you already know
+        /// </summary>
+        public string LanguegeYouKnow
+        {
+            get { return languegeYouKnow; }
+            set { languegeYouKnow = value; }
+        }
+
         public VocalTestForm()
         {
             InitializeComponent();
@@ -46,9 +76,9 @@ namespace KsenesGlosses
 
         private void answerButton_Click(object sender, EventArgs e)
         {
-            progressBar1.Step = progressBar1.Maximum / (nofq - 1); //sets the progres bar length 
+            progressBar1.Step = 1; //sets the progres bar length 
             progressBar1.PerformStep(); //progress bar goes forward
-            if (progressBar1.Value == 100) //track the progresbar if it is full disable the button
+            if (progressBar1.Value == nofq - 1) //track the progresbar if it is full disable the button
             {
                 nextButton.Enabled = false;
                 previousButton.Enabled = true;
@@ -66,9 +96,10 @@ namespace KsenesGlosses
 
         private void VocalTestForm_Load(object sender, EventArgs e)
         {
-            test = Test.createRandomTest(nofq, 2, 4, "", "", ""); //create a test 
+            test = Test.createRandomTest(nofq, 2, 4, "", languegeYouKnow, languegeToLearn); //create a test 
+            progressBar1.Maximum = nofq - 1;
 
-            progressBar1.Step = progressBar1.Maximum / (nofq - 1); //sets the progres bar length 
+            progressBar1.Step = nofq - 1; //sets the progres bar length 
 
             voice.say(test.questions[0].word); // says first word of questions[] 
 
@@ -81,7 +112,7 @@ namespace KsenesGlosses
 
         private void previousButton_Click(object sender, EventArgs e)
         {
-            progressBar1.Step = -progressBar1.Maximum / (nofq - 1); //sets the progres bar to go reverse
+            progressBar1.Step = -1; //sets the progres bar to go reverse
             progressBar1.PerformStep();
 
             if (progressBar1.Value == 0)

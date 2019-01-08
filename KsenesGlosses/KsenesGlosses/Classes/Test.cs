@@ -54,7 +54,7 @@ namespace KsenesGlosses.Classes
             test.questions = new Question[numberOfQuestions];
            
 
-            PutARandomword(test, numberOfQuestions);
+            PutARandomword(test, numberOfQuestions,languageFrom,languageTo);
 
             return test;
 
@@ -63,11 +63,58 @@ namespace KsenesGlosses.Classes
         /// <summary>
         /// Execute a query  get word to translate and the translated word from the DataBase to a test
         /// </summary>
-        public static void PutARandomword(Test test, int numberOfQuestions)
+        public static void PutARandomword(Test test, int numberOfQuestions, string languegeKnown, string languegeTolearn)
         {
-            string strSQL = "SELECT  ENGLISH.Word, GREEK.Word AS Expr1 FROM(ENGLISH INNER JOIN GREEK ON ENGLISH.Word_ID = GREEK.Word_ID ) ";
+            string strSQL="";
+           
+
+            switch (languegeKnown)
+            {
+                case "Greek":
+                    if (languegeTolearn == "English" )
+                    {
+                        strSQL = "SELECT  ENGLISH.Word, GREEK.Word AS Expr1 FROM(ENGLISH INNER JOIN GREEK ON ENGLISH.Word_ID = GREEK.Word_ID ) ";
+
+                    }
+                    else if (languegeTolearn == "Spanish" )
+                    {
+                        strSQL = "SELECT  SPANISH.Word, GREEK.Word AS Expr1 FROM(SPANISH INNER JOIN GREEK ON SPANISH.Word_ID = GREEK.Word_ID ) ";
+
+                    }
+                    break;
+                case "English":
+                    if (languegeTolearn == "Spanish")
+                    {
+                        strSQL = "SELECT  SPANISH.Word, ENGLISH.Word AS Expr1 FROM(SPANISH INNER JOIN ENGLISH ON SPANISH.Word_ID = ENGLISH.Word_ID ) ";
+
+                    }
+                    else if (languegeTolearn == "Greek")
+                    {
+                        strSQL = "SELECT  GREEK.Word, ENGLISH.Word AS Expr1 FROM(GREEK INNER JOIN ENGLISH ON GREEK.Word_ID = ENGLISH.Word_ID ) ";
+
+                    }
+                    break;
+                case "Spanish":
+                    if (languegeTolearn == "English")
+                    {
+                        strSQL = "SELECT  ENGLISH.Word, SPANISH.Word AS Expr1 FROM(ENGLISH INNER JOIN SPANISH ON ENGLISH.Word_ID = SPANISH.Word_ID ) ";
+
+                    }
+                    else if (languegeTolearn == "Greek")
+                    {
+                        strSQL = "SELECT  GREEK.Word, SPANISH.Word AS Expr1 FROM(GREEK INNER JOIN SPANISH ON GREEK.Word_ID = SPANISH.Word_ID ) ";
+
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
 
 
+            VocLearningDataSet vasd = new VocLearningDataSet();
+            
+            
             try
             {
 

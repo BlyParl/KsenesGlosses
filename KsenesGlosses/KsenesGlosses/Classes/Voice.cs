@@ -30,13 +30,17 @@ namespace KsenesGlosses.Classes
             GrammarBuilder grammarBuilder = new GrammarBuilder();        //Speech Rec input commands (christos)
             grammarBuilder.Append(commands);
             Grammar grammar = new Grammar(grammarBuilder);
+           
+            grammar = new DictationGrammar();// loads all the worlds
+
+            
 
             recEngine.RequestRecognizerUpdate();
             recEngine.LoadGrammarAsync(grammar);
                 
             recEngine.SetInputToDefaultAudioDevice();                      //mic device 
 
-            recEngine.SpeechRecognized += recEngine_SpeechRecognized;       //not going to be trigered if nothing is recognized
+           // recEngine.SpeechRecognized += recEngine_SpeechRecognized;       //not going to be trigered if nothing is recognized
 
             
 
@@ -47,7 +51,7 @@ namespace KsenesGlosses.Classes
         }
         public void startRec()
         {
-            recEngine.RecognizeAsync(RecognizeMode.Multiple);               // recognize once 
+            recEngine.RecognizeAsync(RecognizeMode.Single);               // recognize once 
         }
         /// <summary>
         /// speaks the string you put in
@@ -62,6 +66,7 @@ namespace KsenesGlosses.Classes
             if(answer == word)
             {
                 say("correct");
+                recEngine.RecognizeAsyncStop();//stop rec
             }
                    
             if(answer =="how are you")
