@@ -37,6 +37,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.doneButton = new System.Windows.Forms.Button();
             this.speakButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -89,10 +91,10 @@
             // answerTextBox
             // 
             this.answerTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.answerTextBox.Location = new System.Drawing.Point(156, 119);
+            this.answerTextBox.Location = new System.Drawing.Point(156, 203);
             this.answerTextBox.Multiline = true;
             this.answerTextBox.Name = "answerTextBox";
-            this.answerTextBox.Size = new System.Drawing.Size(279, 120);
+            this.answerTextBox.Size = new System.Drawing.Size(163, 30);
             this.answerTextBox.TabIndex = 9;
             this.answerTextBox.TextChanged += new System.EventHandler(this.answerTextBox_TextChanged);
             this.answerTextBox.Enter += new System.EventHandler(this.textBox1_Enter);
@@ -102,7 +104,7 @@
             this.wordToTranslateTextBox.BackColor = System.Drawing.Color.White;
             this.wordToTranslateTextBox.Enabled = false;
             this.wordToTranslateTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.wordToTranslateTextBox.Location = new System.Drawing.Point(156, 61);
+            this.wordToTranslateTextBox.Location = new System.Drawing.Point(156, 119);
             this.wordToTranslateTextBox.Name = "wordToTranslateTextBox";
             this.wordToTranslateTextBox.Size = new System.Drawing.Size(163, 27);
             this.wordToTranslateTextBox.TabIndex = 9;
@@ -151,12 +153,36 @@
             this.speakButton.UseVisualStyleBackColor = false;
             this.speakButton.Click += new System.EventHandler(this.speakButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.label2.Location = new System.Drawing.Point(152, 176);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 24);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Write The Word";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.label3.Location = new System.Drawing.Point(57, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(680, 24);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Write The Word you Want to Translate or Press speak and say the word ";
+            // 
             // TranslationTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.speakButton);
             this.Controls.Add(this.doneButton);
             this.Controls.Add(this.button2);
@@ -186,5 +212,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button doneButton;
         private System.Windows.Forms.Button speakButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -6657,12 +6657,25 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Test_ID, User_ID, Test_Level, Test_Type, Correct_Answers, Wrong_Answers, T" +
                 "ake_date, Time_to_finish FROM TESTS_TAKEN";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO TESTS_TAKEN\r\n                         (User_ID, Test_Level, Test_Type" +
+                ", Correct_Answers, Wrong_Answers, Take_date, Time_to_finish)\r\nVALUES        (?, " +
+                "?, ?, ?, ?, ?, ?)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("User_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Test_Level", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Test_Level", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Test_Type", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Test_Type", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Correct_Answers", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Correct_Answers", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Wrong_Answers", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Wrong_Answers", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Take_date", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Take_date", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Time_to_finish", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Time_to_finish", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6937,6 +6950,61 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(short Test_Level, string Test_Type, global::System.Nullable<int> Correct_Answers, global::System.Nullable<int> Wrong_Answers, global::System.Nullable<global::System.DateTime> Take_date, global::System.Nullable<global::System.DateTime> Time_to_finish, int Original_Test_ID, int Original_User_ID, short Original_Test_Level, string Original_Test_Type, global::System.Nullable<int> Original_Correct_Answers, global::System.Nullable<int> Original_Wrong_Answers, global::System.Nullable<global::System.DateTime> Original_Take_date, global::System.Nullable<global::System.DateTime> Original_Time_to_finish) {
             return this.Update(Original_User_ID, Test_Level, Test_Type, Correct_Answers, Wrong_Answers, Take_date, Time_to_finish, Original_Test_ID, Original_User_ID, Original_Test_Level, Original_Test_Type, Original_Correct_Answers, Original_Wrong_Answers, Original_Take_date, Original_Time_to_finish);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertTest(int User_ID, short Test_Level, string Test_Type, global::System.Nullable<int> Correct_Answers, global::System.Nullable<int> Wrong_Answers, global::System.Nullable<global::System.DateTime> Take_date, global::System.Nullable<global::System.DateTime> Time_to_finish) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(User_ID));
+            command.Parameters[1].Value = ((short)(Test_Level));
+            if ((Test_Type == null)) {
+                throw new global::System.ArgumentNullException("Test_Type");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Test_Type));
+            }
+            if ((Correct_Answers.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(Correct_Answers.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Wrong_Answers.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(Wrong_Answers.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Take_date.HasValue == true)) {
+                command.Parameters[5].Value = ((System.DateTime)(Take_date.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Time_to_finish.HasValue == true)) {
+                command.Parameters[6].Value = ((System.DateTime)(Time_to_finish.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -7555,21 +7623,27 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, First_Name, Last_Name, User_Name, Email_Adress, [Password] FROM USERS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO `USERS` (`First_Name`, `Last_Name`, `User_Name`, `Email_Adress`, `Pas" +
-                "sword`) VALUES (?, ?, ?, ?, ?)";
+            this._commandCollection[1].CommandText = "SELECT        First_Name, Last_Name, User_Name, Email_Adress, ID\r\nFROM           " +
+                " USERS\r\nWHERE        (User_Name = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First_Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last_Name", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("User_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email_Adress", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email_Adress", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Password", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO `USERS` (`First_Name`, `Last_Name`, `User_Name`, `Email_Adress`, `Pas" +
+                "sword`) VALUES (?, ?, ?, ?, ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("User_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email_Adress", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email_Adress", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Password", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7591,6 +7665,23 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual VocLearningDataSet.USERSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            VocLearningDataSet.USERSDataTable dataTable = new VocLearningDataSet.USERSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual VocLearningDataSet.USERSDataTable GetUser(string User_Name) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((User_Name == null)) {
+                throw new global::System.ArgumentNullException("User_Name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(User_Name));
+            }
             VocLearningDataSet.USERSDataTable dataTable = new VocLearningDataSet.USERSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7825,7 +7916,7 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertUser(string First_Name, string Last_Name, string User_Name, string Email_Adress, string Password) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
             if ((First_Name == null)) {
                 throw new global::System.ArgumentNullException("First_Name");
             }
