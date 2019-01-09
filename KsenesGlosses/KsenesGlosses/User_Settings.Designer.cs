@@ -151,7 +151,7 @@
             this.Username.Font = new System.Drawing.Font("Arial", 14.25F);
             this.Username.ForeColor = System.Drawing.Color.White;
             this.Username.HideSelection = false;
-            this.Username.Location = new System.Drawing.Point(86, 183);
+            this.Username.Location = new System.Drawing.Point(88, 183);
             this.Username.Name = "Username";
             this.Username.ReadOnly = true;
             this.Username.Size = new System.Drawing.Size(136, 22);
@@ -179,7 +179,7 @@
             // panel_username
             // 
             this.panel_username.BackColor = System.Drawing.Color.White;
-            this.panel_username.Location = new System.Drawing.Point(37, 211);
+            this.panel_username.Location = new System.Drawing.Point(39, 211);
             this.panel_username.Name = "panel_username";
             this.panel_username.Size = new System.Drawing.Size(185, 5);
             this.panel_username.TabIndex = 21;
@@ -187,7 +187,7 @@
             // img_username
             // 
             this.img_username.Image = global::KsenesGlosses.Properties.Resources.username;
-            this.img_username.Location = new System.Drawing.Point(37, 173);
+            this.img_username.Location = new System.Drawing.Point(39, 173);
             this.img_username.Name = "img_username";
             this.img_username.Size = new System.Drawing.Size(32, 32);
             this.img_username.TabIndex = 11;

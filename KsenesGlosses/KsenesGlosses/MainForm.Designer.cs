@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.Logout_button = new System.Windows.Forms.Button();
+            this.Music = new System.Windows.Forms.Button();
             this.admin_Button = new System.Windows.Forms.Button();
             this.User_Settings = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -94,6 +95,7 @@
             // 
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Logout_button);
+            this.panel1.Controls.Add(this.Music);
             this.panel1.Controls.Add(this.admin_Button);
             this.panel1.Controls.Add(this.User_Settings);
             this.panel1.Controls.Add(this.button2);
@@ -133,6 +135,23 @@
             this.Logout_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Logout_button.UseVisualStyleBackColor = true;
             this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
+            // 
+            // Music
+            // 
+            this.Music.FlatAppearance.BorderSize = 0;
+            this.Music.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Music.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Music.ForeColor = System.Drawing.Color.White;
+            this.Music.Image = global::KsenesGlosses.Properties.Resources.volume_off_indicator;
+            this.Music.Location = new System.Drawing.Point(0, 481);
+            this.Music.Name = "Music";
+            this.Music.Size = new System.Drawing.Size(166, 79);
+            this.Music.TabIndex = 3;
+            this.Music.Text = "Mute";
+            this.Music.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Music.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Music.UseVisualStyleBackColor = true;
+            this.Music.Click += new System.EventHandler(this.Music_Click);
             // 
             // admin_Button
             // 
@@ -769,5 +788,6 @@
         private VocLearningDataSetTableAdapters.CATEGORIESTableAdapter cATEGORIESTableAdapter;
         private System.Windows.Forms.Label testErrors_label;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Music;
     }
 }

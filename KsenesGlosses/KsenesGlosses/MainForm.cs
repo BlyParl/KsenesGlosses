@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KsenesGlosses.Classes;
+using WMPLib;
 
 namespace KsenesGlosses
 {
     public partial class MainForm : Form
     {
+        WindowsMediaPlayer player = new WindowsMediaPlayer();
 
         //values of chosen test:
         public String languageToLearn = null;
@@ -31,7 +33,7 @@ namespace KsenesGlosses
         public MainForm()
         {
             InitializeComponent();
-
+            player.URL = "Background_music.mp3";
         }
         public Panel GetMainPanel()
         {
@@ -469,6 +471,11 @@ namespace KsenesGlosses
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //start the background audio
+            player.settings.setMode("loop", true);
+            player.controls.play();
+            
+
             // TODO: This line of code loads data into the 'vocLearningDataSet.CATEGORIES' table. You can move, or remove it, as needed.
             this.cATEGORIESTableAdapter.Fill(this.vocLearningDataSet.CATEGORIES);
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
@@ -558,6 +565,25 @@ namespace KsenesGlosses
             searchForm.TopLevel = false;
             MainPanel.Controls.Add(searchForm);
             searchForm.Show();
+        }
+
+        private void Music_Click(object sender, EventArgs e)
+        {
+            if (Music.Text == "Mute")
+            {
+                //pause music and change the button
+                player.controls.pause();
+                Music.Text = "Play";
+                Music.Image= Properties.Resources.audio_volume;
+            }
+            else
+            {
+                //start the background audio
+                player.settings.setMode("loop", true);
+                player.controls.play();
+                Music.Text = "Mute";
+                Music.Image = Properties.Resources.volume_off_indicator;
+            }
         }
     }
 }

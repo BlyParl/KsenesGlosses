@@ -63,6 +63,16 @@ namespace KsenesGlosses.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap audio_volume {
+            get {
+                object obj = ResourceManager.GetObject("audio-volume", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
@@ -316,6 +326,16 @@ namespace KsenesGlosses.Properties {
         internal static System.Drawing.Bitmap username_blue {
             get {
                 object obj = ResourceManager.GetObject("username_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap volume_off_indicator {
+            get {
+                object obj = ResourceManager.GetObject("volume-off-indicator", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

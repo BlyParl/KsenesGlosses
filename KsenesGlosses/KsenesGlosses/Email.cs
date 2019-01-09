@@ -155,7 +155,7 @@ namespace KsenesGlosses
                 MessageBox.Show(ex.Message);
                 return false;
             }
-            return false;
+            
         }
 
 
