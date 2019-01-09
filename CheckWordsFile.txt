@@ -1,0 +1,60 @@
+package CheckFile;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.regex.*;
+
+public class CheckFile {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        
+        String path = "C:\\Users\\alekos\\Desktop\\EnglishWordsInitial.txt";
+        FileReader freader = new FileReader(path);
+        BufferedReader br = new BufferedReader(freader);
+        FileWriter fwriter = new FileWriter("C:\\Users\\alekos\\Desktop\\EnglishWords.txt");
+        BufferedWriter bw = new BufferedWriter(fwriter);
+        int DeletedCount = 0;
+        int WordsCount   = 0;
+        try
+        {
+            
+        
+        for (String line; (line = br.readLine()) != null;)
+        {
+            if (line.matches("[a-z]")  || line.matches("[a-z]{2}") )
+            {
+                System.out.println(line);
+                DeletedCount++;
+            }
+            else
+            { 
+                bw.append(line);  //grafei sto neo arxeio
+                bw.newLine();     // nea grammi gia na einai oi lexeis h mia katw apo thn allh sto neo arxeio
+                WordsCount++;
+            }
+            
+        }
+        System.out.println("words deleted:"+ DeletedCount);
+        System.out.println("words remaining in file:"+WordsCount);
+        }
+        catch(RuntimeException e)
+        {
+            System.out.println(e.toString());
+        }
+        finally
+        {
+            br.close();
+            bw.close();
+        }
+    }
+    
+}
