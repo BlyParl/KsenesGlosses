@@ -7622,7 +7622,7 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[7];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[11];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, First_Name, Last_Name, User_Name, Email_Adress, [Password] FROM USERS";
@@ -7670,6 +7670,34 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Password", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Email_Adress", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email_Adress", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[7] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "UPDATE       USERS\r\nSET                Email_Adress = ?\r\nWHERE        (User_Name " +
+                "= ?)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email_Adress", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email_Adress", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_User_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_Name", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[8] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "UPDATE       USERS\r\nSET                First_Name = ?\r\nWHERE        (User_Name = " +
+                "?)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_User_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_Name", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[9] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = "UPDATE       USERS\r\nSET                Last_Name = ?\r\nWHERE        (User_Name = ?" +
+                ")";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_User_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_Name", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[10] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = "UPDATE       USERS\r\nSET                [Password] = ?\r\nWHERE        (User_Name = " +
+                "?)";
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Password", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_User_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_Name", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8121,6 +8149,146 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
             }
             else {
                 command.Parameters[1].Value = ((string)(Original_Email_Adress));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_email_by_username(string Email_Adress, string Original_User_Name) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[7];
+            if ((Email_Adress == null)) {
+                throw new global::System.ArgumentNullException("Email_Adress");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Email_Adress));
+            }
+            if ((Original_User_Name == null)) {
+                throw new global::System.ArgumentNullException("Original_User_Name");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Original_User_Name));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_firstname_by_username(string First_Name, string Original_User_Name) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[8];
+            if ((First_Name == null)) {
+                throw new global::System.ArgumentNullException("First_Name");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(First_Name));
+            }
+            if ((Original_User_Name == null)) {
+                throw new global::System.ArgumentNullException("Original_User_Name");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Original_User_Name));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_lastname_by_username(string Last_Name, string Original_User_Name) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[9];
+            if ((Last_Name == null)) {
+                throw new global::System.ArgumentNullException("Last_Name");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Last_Name));
+            }
+            if ((Original_User_Name == null)) {
+                throw new global::System.ArgumentNullException("Original_User_Name");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Original_User_Name));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_password_by_username(string Password, string Original_User_Name) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[10];
+            if ((Password == null)) {
+                throw new global::System.ArgumentNullException("Password");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Password));
+            }
+            if ((Original_User_Name == null)) {
+                throw new global::System.ArgumentNullException("Original_User_Name");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Original_User_Name));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

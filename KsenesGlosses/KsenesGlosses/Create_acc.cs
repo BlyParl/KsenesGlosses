@@ -194,10 +194,10 @@ namespace KsenesGlosses
             {
                 if (char.IsUpper(c))
                 {
-                    return true;
+                    return false;
                 }
             }
-            return false;
+            return true;
         }
 
         /// <summary>
@@ -260,16 +260,12 @@ namespace KsenesGlosses
             else
             {
                 Password.PasswordChar = '*';
-                if (pass_caps_check())
-                {
-                    Password.Text = "caps";
-                }
             } 
         }
 
         private void Sing_up_Click(object sender, EventArgs e)
         {
-            if (pass_constraint_check())
+            if (pass_constraint_check() && pass_caps_check())
             {
                 int count = (Int32)usersTableAdapter.Create_acc_check(Username.Text, email.Text);
 
@@ -294,7 +290,7 @@ namespace KsenesGlosses
             }
             else
             {
-                MessageBox.Show("Password must have 8 or more characters\n"+"And Contains at least 2 letters and 2 digits");
+                MessageBox.Show("Password must have 8 or more characters\n"+"And Contains at least 2 lower case letters and 2 digits and no upper case letters");
             }
         }
 
