@@ -8477,14 +8477,20 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[6];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Word_ID, [Image], [Level], Category FROM WORD_INFO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT COUNT(*) FROM WORD_INFO";
+            this._commandCollection[1].CommandText = @"SELECT        WORD_INFO.Word_ID, WORD_INFO.[Image], WORD_INFO.[Level], WORD_INFO.Category, ENGLISH.Word AS [English word], 
+                         ENGLISH.Phonetic AS [English Phonetic], GREEK.Word AS [Greek Word], GREEK.Phonetic AS [Greek Phonetic], SPANISH.Word AS [Spanish Word], 
+                         SPANISH.Phonetic AS [Spanish Phonetic]
+FROM            (((WORD_INFO INNER JOIN
+                         ENGLISH ON WORD_INFO.Word_ID = ENGLISH.Word_ID) INNER JOIN
+                         GREEK ON WORD_INFO.Word_ID = GREEK.Word_ID) INNER JOIN
+                         SPANISH ON WORD_INFO.Word_ID = SPANISH.Word_ID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -8494,41 +8500,19 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
 FROM            (((WORD_INFO INNER JOIN
                          ENGLISH ON WORD_INFO.Word_ID = ENGLISH.Word_ID) INNER JOIN
                          GREEK ON WORD_INFO.Word_ID = GREEK.Word_ID) INNER JOIN
-                         SPANISH ON WORD_INFO.Word_ID = SPANISH.Word_ID)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        WORD_INFO.Word_ID, WORD_INFO.[Image], WORD_INFO.[Level], WORD_INFO.Category, ENGLISH.Word AS [English word], 
-                         ENGLISH.Phonetic AS [English Phonetic], GREEK.Word AS [Greek Word], GREEK.Phonetic AS [Greek Phonetic], SPANISH.Word AS [Spanish Word], 
-                         SPANISH.Phonetic AS [Spanish Phonetic]
-FROM            (((WORD_INFO INNER JOIN
-                         ENGLISH ON WORD_INFO.Word_ID = ENGLISH.Word_ID) INNER JOIN
-                         GREEK ON WORD_INFO.Word_ID = GREEK.Word_ID) INNER JOIN
                          SPANISH ON WORD_INFO.Word_ID = SPANISH.Word_ID)
 WHERE        (ENGLISH.Word = ?) OR
                          (GREEK.Word = ?) OR
                          (SPANISH.Word = ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "English word", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word1", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Greek Word", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word2", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Spanish Word", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        [Image]\r\nFROM            WORD_INFO\r\nWHERE        (Word_ID = ?)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "English word", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word1", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Greek Word", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word2", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Spanish Word", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        [Image]\r\nFROM            WORD_INFO\r\nWHERE        (Word_ID = ?)";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Word_ID", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT        WORD_INFO.Word_ID, WORD_INFO.[Image], WORD_INFO.[Level], WORD_INFO.Category, ENGLISH.Word AS [English word], 
-                         ENGLISH.Phonetic AS [English Phonetic], GREEK.Word AS [Greek Word], GREEK.Phonetic AS [Greek Phonetic], SPANISH.Word AS [Spanish Word], 
-                         SPANISH.Phonetic AS [Spanish Phonetic]
-FROM            (((WORD_INFO INNER JOIN
-                         ENGLISH ON WORD_INFO.Word_ID = ENGLISH.Word_ID) INNER JOIN
-                         GREEK ON WORD_INFO.Word_ID = GREEK.Word_ID) INNER JOIN
-                         SPANISH ON WORD_INFO.Word_ID = SPANISH.Word_ID)
-WHERE        (WORD_INFO.Word_ID = ?)";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Word_ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Word_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Word_ID", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8560,7 +8544,7 @@ WHERE        (WORD_INFO.Word_ID = ?)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int fillAllWords(VocLearningDataSet.WORD_INFODataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -8573,7 +8557,7 @@ WHERE        (WORD_INFO.Word_ID = ?)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual VocLearningDataSet.WORD_INFODataTable getAllWords() {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             VocLearningDataSet.WORD_INFODataTable dataTable = new VocLearningDataSet.WORD_INFODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8584,7 +8568,7 @@ WHERE        (WORD_INFO.Word_ID = ?)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual VocLearningDataSet.WORD_INFODataTable findWord(string Word, string Word1, string Word2) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Word == null)) {
                 throw new global::System.ArgumentNullException("Word");
             }
@@ -8613,19 +8597,7 @@ WHERE        (WORD_INFO.Word_ID = ?)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual VocLearningDataSet.WORD_INFODataTable Get_image_by_wordid(int Word_ID) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Word_ID));
-            VocLearningDataSet.WORD_INFODataTable dataTable = new VocLearningDataSet.WORD_INFODataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual VocLearningDataSet.WORD_INFODataTable GetWordDataByID(int Word_ID) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Word_ID));
             VocLearningDataSet.WORD_INFODataTable dataTable = new VocLearningDataSet.WORD_INFODataTable();
             this.Adapter.Fill(dataTable);
@@ -8767,34 +8739,6 @@ WHERE        (WORD_INFO.Word_ID = ?)";
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> CountWords() {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            object returnValue;
-            try {
-                returnValue = command.ExecuteScalar();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
-            }
-            else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
             }
         }
     }

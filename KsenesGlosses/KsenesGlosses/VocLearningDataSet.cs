@@ -9,10 +9,3 @@
         }
     }
 }
-
-namespace KsenesGlosses.VocLearningDataSetTableAdapters {
-    
-    
-    public partial class WORD_INFOTableAdapter {
-    }
-}

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Diagnostics;
-using System.Data;
 
 namespace KsenesGlosses.Classes
 {
@@ -50,71 +49,12 @@ namespace KsenesGlosses.Classes
         /// <returns></returns>
         public static Test createRandomTest(int numberOfQuestions, int levelMin, int levelMax, String category, String languageFrom, String languageTo)
         {
-            //Due to the database not containing correct level, categories, and images these values will be ignored for now
 
             Test test = new Test();
             test.questions = new Question[numberOfQuestions];
+           
 
-            //gets random words in question
-
-            VocLearningDataSetTableAdapters.WORD_INFOTableAdapter wordInfoAdapter = new VocLearningDataSetTableAdapters.WORD_INFOTableAdapter();
-
-            int totalWords = (int)wordInfoAdapter.CountWords();
-
-            Random random = new Random();
-
-            for(int i = 0; i < numberOfQuestions; i++)
-            {
-                int randomNumber = random.Next(0, totalWords);
-                VocLearningDataSet.WORD_INFODataTable wordDataTable = wordInfoAdapter.GetWordDataByID(randomNumber);
-
-                //risky code please don't change
-                //this will create random question that contains word data
-
-                //dhlwsh metablitwn apo th bash
-                String greekWord = wordDataTable.Rows[0].Field<String>("Greek Word");
-                String englishWord = wordDataTable.Rows[0].Field<String>("English Word");
-                String spanishWord = wordDataTable.Rows[0].Field<String>("Spanish Word");
-                int level = wordDataTable.Rows[0].Field<Int16>("Level");
-                String wordCategory = wordDataTable.Rows[0].Field<String>("Category");
-
-                String word = "";
-                String translatedWord = "";
-
-                //checking languages
-                if(languageTo == "Greek")
-                {
-                    word = greekWord;
-                }
-                else if(languageTo == "English")
-                {
-                    word = englishWord;
-                }
-                else if(languageTo == "Spanish")
-                {
-                    word = spanishWord;
-                }
-
-                if(languageFrom == "Greek")
-                {
-                    translatedWord = greekWord;
-                }
-                else if(languageFrom == "English")
-                {
-                    translatedWord = englishWord;
-                }
-                else if(languageFrom == "Spanish")
-                {
-                    translatedWord = spanishWord;
-                }
-
-                //puts a new question with all the correct values as selected
-
-                test.questions[i] = new Question(word, translatedWord, languageTo, languageFrom, null, level, wordCategory) ;
-
-            }
-
-            //PutARandomword(test, numberOfQuestions,languageFrom,languageTo);
+            PutARandomword(test, numberOfQuestions,languageFrom,languageTo);
 
             return test;
 
