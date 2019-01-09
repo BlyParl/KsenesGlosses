@@ -73,36 +73,36 @@ namespace KsenesGlosses.Classes
                 case "Greek":
                     if (languegeTolearn == "English" )
                     {
-                            strSQL = "SELECT  ENGLISH.Word, GREEK.Word AS Expr1 FROM(ENGLISH INNER JOIN GREEK ON ENGLISH.Word_ID = GREEK.Word_ID ) ";
+                            strSQL = "SELECT  ENGLISH.Word, GREEK.Word AS Expr1 FROM(ENGLISH INNER JOIN GREEK ON ENGLISH.Word_ID = GREEK.Word_ID ) ORDER BY Rnd(-(100000* GREEK.Word_ID)*Time())";
                         //  strSQL = "SELECT  ENGLISH.Word, GREEK.Word AS Expr1 FROM(ENGLISH INNER JOIN GREEK ON ENGLISH.Word_ID = GREEK.Word_ID ) where ENGLISH.Word_ID   = ROUND(rnd( ) * 5460)";
                     }
                     else if (languegeTolearn == "Spanish" )
                     {
-                        strSQL = "SELECT  SPANISH.Word, GREEK.Word AS Expr1 FROM(SPANISH INNER JOIN GREEK ON SPANISH.Word_ID = GREEK.Word_ID ) ";
+                        strSQL = "SELECT  SPANISH.Word, GREEK.Word AS Expr1 FROM(SPANISH INNER JOIN GREEK ON SPANISH.Word_ID = GREEK.Word_ID )  ORDER BY Rnd(-(100000* GREEK.Word_ID)*Time()) ";
 
                     }
                     break;
                 case "English":
                     if (languegeTolearn == "Spanish")
                     {
-                        strSQL = "SELECT  SPANISH.Word, ENGLISH.Word AS Expr1 FROM(SPANISH INNER JOIN ENGLISH ON SPANISH.Word_ID = ENGLISH.Word_ID ) ";
+                        strSQL = "SELECT  SPANISH.Word, ENGLISH.Word AS Expr1 FROM(SPANISH INNER JOIN ENGLISH ON SPANISH.Word_ID = ENGLISH.Word_ID )  ORDER BY Rnd(-(100000* ENGLISH.Word_ID)*Time())";
 
                     }
                     else if (languegeTolearn == "Greek")
                     {
-                        strSQL = "SELECT  GREEK.Word, ENGLISH.Word AS Expr1 FROM(GREEK INNER JOIN ENGLISH ON GREEK.Word_ID = ENGLISH.Word_ID ) ";
+                        strSQL = "SELECT  GREEK.Word, ENGLISH.Word AS Expr1 FROM(GREEK INNER JOIN ENGLISH ON GREEK.Word_ID = ENGLISH.Word_ID ) ORDER BY Rnd(-(100000* ENGLISH.Word_ID)*Time())";
 
                     }
                     break;
                 case "Spanish":
                     if (languegeTolearn == "English")
                     {
-                        strSQL = "SELECT  ENGLISH.Word, SPANISH.Word AS Expr1 FROM(ENGLISH INNER JOIN SPANISH ON ENGLISH.Word_ID = SPANISH.Word_ID ) ";
+                        strSQL = "SELECT  ENGLISH.Word, SPANISH.Word AS Expr1 FROM(ENGLISH INNER JOIN SPANISH ON ENGLISH.Word_ID = SPANISH.Word_ID ) ORDER BY Rnd(-(100000* SPANISH.Word_ID)*Time())";
 
                     }
                     else if (languegeTolearn == "Greek")
                     {
-                        strSQL = "SELECT  GREEK.Word, SPANISH.Word AS Expr1 FROM(GREEK INNER JOIN SPANISH ON GREEK.Word_ID = SPANISH.Word_ID ) ";
+                        strSQL = "SELECT  GREEK.Word, SPANISH.Word AS Expr1 FROM(GREEK INNER JOIN SPANISH ON GREEK.Word_ID = SPANISH.Word_ID ) ORDER BY Rnd(-(100000* SPANISH.Word_ID)*Time())";
 
                     }
                     break;
