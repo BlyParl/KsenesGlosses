@@ -131,8 +131,11 @@ namespace KsenesGlosses
            if(languegeYouKnow!="English")
             {
                 speakButton.Enabled = false;
+
             }
-           
+
+          
+            
 
         }
 

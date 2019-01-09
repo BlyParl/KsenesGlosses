@@ -76,7 +76,7 @@
             this.previousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.previousButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.previousButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.previousButton.Location = new System.Drawing.Point(391, 245);
+            this.previousButton.Location = new System.Drawing.Point(563, 281);
             this.previousButton.Name = "previousButton";
             this.previousButton.Size = new System.Drawing.Size(100, 30);
             this.previousButton.TabIndex = 5;
@@ -90,7 +90,7 @@
             this.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nextButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.nextButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.nextButton.Location = new System.Drawing.Point(523, 245);
+            this.nextButton.Location = new System.Drawing.Point(688, 281);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(100, 30);
             this.nextButton.TabIndex = 6;
@@ -111,12 +111,11 @@
             // 
             // doneButton
             // 
-            this.doneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.doneButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
             this.doneButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.doneButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.doneButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.doneButton.Location = new System.Drawing.Point(523, 290);
+            this.doneButton.Location = new System.Drawing.Point(688, 347);
             this.doneButton.Name = "doneButton";
             this.doneButton.Size = new System.Drawing.Size(100, 30);
             this.doneButton.TabIndex = 12;
@@ -129,11 +128,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.label2.Location = new System.Drawing.Point(398, 122);
+            this.label2.Location = new System.Drawing.Point(393, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(361, 24);
+            this.label2.Size = new System.Drawing.Size(395, 24);
             this.label2.TabIndex = 13;
-            this.label2.Text = " Press the Listen Button To hear agen";
+            this.label2.Text = " Press the Listen Button To hear the word";
             // 
             // VocalTestForm
             // 

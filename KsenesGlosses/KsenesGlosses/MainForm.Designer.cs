@@ -237,10 +237,11 @@
             // testErrors_label
             // 
             this.testErrors_label.AutoSize = true;
+            this.testErrors_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.testErrors_label.ForeColor = System.Drawing.Color.Firebrick;
             this.testErrors_label.Location = new System.Drawing.Point(219, 302);
             this.testErrors_label.Name = "testErrors_label";
-            this.testErrors_label.Size = new System.Drawing.Size(80, 13);
+            this.testErrors_label.Size = new System.Drawing.Size(92, 15);
             this.testErrors_label.TabIndex = 40;
             this.testErrors_label.Text = "Choose options";
             // 

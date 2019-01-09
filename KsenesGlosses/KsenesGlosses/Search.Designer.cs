@@ -113,33 +113,33 @@
             // spanishPhonetic_label
             // 
             this.spanishPhonetic_label.AutoSize = true;
-            this.spanishPhonetic_label.Font = new System.Drawing.Font("Century Gothic", 8.2F);
+            this.spanishPhonetic_label.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.spanishPhonetic_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.spanishPhonetic_label.Location = new System.Drawing.Point(200, 225);
             this.spanishPhonetic_label.Name = "spanishPhonetic_label";
-            this.spanishPhonetic_label.Size = new System.Drawing.Size(100, 16);
+            this.spanishPhonetic_label.Size = new System.Drawing.Size(132, 20);
             this.spanishPhonetic_label.TabIndex = 14;
             this.spanishPhonetic_label.Text = "spanish phonetic";
             // 
             // englishPhonetic_label
             // 
             this.englishPhonetic_label.AutoSize = true;
-            this.englishPhonetic_label.Font = new System.Drawing.Font("Century Gothic", 8.2F);
+            this.englishPhonetic_label.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.englishPhonetic_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.englishPhonetic_label.Location = new System.Drawing.Point(200, 139);
             this.englishPhonetic_label.Name = "englishPhonetic_label";
-            this.englishPhonetic_label.Size = new System.Drawing.Size(96, 16);
+            this.englishPhonetic_label.Size = new System.Drawing.Size(129, 20);
             this.englishPhonetic_label.TabIndex = 13;
             this.englishPhonetic_label.Text = "english phonetic";
             // 
             // greekPhonetic_label
             // 
             this.greekPhonetic_label.AutoSize = true;
-            this.greekPhonetic_label.Font = new System.Drawing.Font("Century Gothic", 8.2F);
+            this.greekPhonetic_label.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.greekPhonetic_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.greekPhonetic_label.Location = new System.Drawing.Point(201, 44);
             this.greekPhonetic_label.Name = "greekPhonetic_label";
-            this.greekPhonetic_label.Size = new System.Drawing.Size(89, 16);
+            this.greekPhonetic_label.Size = new System.Drawing.Size(122, 20);
             this.greekPhonetic_label.TabIndex = 12;
             this.greekPhonetic_label.Text = "greek phonetic";
             // 
@@ -179,11 +179,11 @@
             // spanish_label
             // 
             this.spanish_label.AutoSize = true;
-            this.spanish_label.Font = new System.Drawing.Font("Century Gothic", 8.2F);
+            this.spanish_label.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.spanish_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.spanish_label.Location = new System.Drawing.Point(196, 189);
             this.spanish_label.Name = "spanish_label";
-            this.spanish_label.Size = new System.Drawing.Size(79, 16);
+            this.spanish_label.Size = new System.Drawing.Size(105, 20);
             this.spanish_label.TabIndex = 8;
             this.spanish_label.Text = "spanish word";
             // 
@@ -201,11 +201,11 @@
             // english_label
             // 
             this.english_label.AutoSize = true;
-            this.english_label.Font = new System.Drawing.Font("Century Gothic", 8.2F);
+            this.english_label.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.english_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.english_label.Location = new System.Drawing.Point(192, 103);
             this.english_label.Name = "english_label";
-            this.english_label.Size = new System.Drawing.Size(75, 16);
+            this.english_label.Size = new System.Drawing.Size(102, 20);
             this.english_label.TabIndex = 6;
             this.english_label.Text = "english word";
             // 
@@ -223,11 +223,11 @@
             // greek_label
             // 
             this.greek_label.AutoSize = true;
-            this.greek_label.Font = new System.Drawing.Font("Century Gothic", 8.2F);
+            this.greek_label.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.greek_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.greek_label.Location = new System.Drawing.Point(188, 15);
             this.greek_label.Name = "greek_label";
-            this.greek_label.Size = new System.Drawing.Size(68, 16);
+            this.greek_label.Size = new System.Drawing.Size(95, 20);
             this.greek_label.TabIndex = 4;
             this.greek_label.Text = "greek word";
             // 

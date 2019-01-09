@@ -31,8 +31,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.Next = new System.Windows.Forms.Button();
-            this.Exit_test = new System.Windows.Forms.Button();
             this.Answer = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.doneButton = new System.Windows.Forms.Button();
+            this.previousButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,36 +69,64 @@
             this.Next.UseVisualStyleBackColor = false;
             this.Next.Click += new System.EventHandler(this.Next_Click);
             // 
-            // Exit_test
-            // 
-            this.Exit_test.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.Exit_test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exit_test.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.Exit_test.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.Exit_test.Location = new System.Drawing.Point(700, 420);
-            this.Exit_test.Name = "Exit_test";
-            this.Exit_test.Size = new System.Drawing.Size(100, 30);
-            this.Exit_test.TabIndex = 7;
-            this.Exit_test.Text = "Exit Test";
-            this.Exit_test.UseVisualStyleBackColor = false;
-            this.Exit_test.Click += new System.EventHandler(this.Exit_test_Click);
-            // 
             // Answer
             // 
             this.Answer.Location = new System.Drawing.Point(146, 269);
+            this.Answer.Multiline = true;
             this.Answer.Name = "Answer";
-            this.Answer.Size = new System.Drawing.Size(214, 20);
+            this.Answer.Size = new System.Drawing.Size(214, 50);
             this.Answer.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.label2.Location = new System.Drawing.Point(116, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(485, 24);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Write The Word Corresponding to the Image below";
+            // 
+            // doneButton
+            // 
+            this.doneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.doneButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.doneButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.doneButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.doneButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.doneButton.Location = new System.Drawing.Point(665, 351);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(100, 30);
+            this.doneButton.TabIndex = 15;
+            this.doneButton.Text = "Done";
+            this.doneButton.UseVisualStyleBackColor = false;
+            // 
+            // previousButton
+            // 
+            this.previousButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.previousButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.previousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.previousButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.previousButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.previousButton.Location = new System.Drawing.Point(527, 289);
+            this.previousButton.Name = "previousButton";
+            this.previousButton.Size = new System.Drawing.Size(100, 30);
+            this.previousButton.TabIndex = 16;
+            this.previousButton.Text = "Previous";
+            this.previousButton.UseVisualStyleBackColor = false;
             // 
             // ImageTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(840, 486);
+            this.Controls.Add(this.previousButton);
+            this.Controls.Add(this.doneButton);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Answer);
             this.Controls.Add(this.Next);
-            this.Controls.Add(this.Exit_test);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -114,7 +144,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button Next;
-        private System.Windows.Forms.Button Exit_test;
         private System.Windows.Forms.TextBox Answer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button doneButton;
+        private System.Windows.Forms.Button previousButton;
     }
 }

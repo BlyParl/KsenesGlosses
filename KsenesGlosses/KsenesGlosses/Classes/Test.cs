@@ -73,8 +73,8 @@ namespace KsenesGlosses.Classes
                 case "Greek":
                     if (languegeTolearn == "English" )
                     {
-                        strSQL = "SELECT  ENGLISH.Word, GREEK.Word AS Expr1 FROM(ENGLISH INNER JOIN GREEK ON ENGLISH.Word_ID = GREEK.Word_ID ) ";
-
+                            strSQL = "SELECT  ENGLISH.Word, GREEK.Word AS Expr1 FROM(ENGLISH INNER JOIN GREEK ON ENGLISH.Word_ID = GREEK.Word_ID ) ";
+                        //  strSQL = "SELECT  ENGLISH.Word, GREEK.Word AS Expr1 FROM(ENGLISH INNER JOIN GREEK ON ENGLISH.Word_ID = GREEK.Word_ID ) where ENGLISH.Word_ID   = ROUND(rnd( ) * 5460)";
                     }
                     else if (languegeTolearn == "Spanish" )
                     {
