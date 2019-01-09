@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.email = new System.Windows.Forms.TextBox();
             this.panel_email = new System.Windows.Forms.Panel();
@@ -49,6 +52,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Save_changes = new System.Windows.Forms.Button();
             this.Change_pass = new System.Windows.Forms.Button();
+            this.Statistics_Button = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_last_name)).BeginInit();
@@ -56,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_username)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -287,12 +293,45 @@
             this.Change_pass.UseVisualStyleBackColor = false;
             this.Change_pass.Click += new System.EventHandler(this.Change_pass_Click);
             // 
+            // Statistics_Button
+            // 
+            this.Statistics_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(175)))), ((int)(((byte)(255)))));
+            this.Statistics_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Statistics_Button.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Statistics_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.Statistics_Button.Location = new System.Drawing.Point(663, 360);
+            this.Statistics_Button.Name = "Statistics_Button";
+            this.Statistics_Button.Size = new System.Drawing.Size(187, 41);
+            this.Statistics_Button.TabIndex = 27;
+            this.Statistics_Button.Text = "Show Statistics";
+            this.Statistics_Button.UseVisualStyleBackColor = false;
+            this.Statistics_Button.Click += new System.EventHandler(this.Statistics_Button_Click);
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(514, 22);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Performance";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(489, 300);
+            this.chart1.TabIndex = 28;
+            this.chart1.Text = "chart1";
+            // 
             // User_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1030, 602);
+            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.Statistics_Button);
             this.Controls.Add(this.Change_pass);
             this.Controls.Add(this.Save_changes);
             this.Controls.Add(this.panel2);
@@ -325,6 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_username)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +392,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button Save_changes;
         private System.Windows.Forms.Button Change_pass;
+        private System.Windows.Forms.Button Statistics_Button;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

@@ -34,6 +34,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Logout_button = new System.Windows.Forms.Button();
             this.Music = new System.Windows.Forms.Button();
+            this.Tips = new System.Windows.Forms.Button();
             this.admin_Button = new System.Windows.Forms.Button();
             this.User_Settings = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -74,7 +75,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Close = new System.Windows.Forms.PictureBox();
             this.cATEGORIESTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.CATEGORIESTableAdapter();
-            this.Tips = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MainPanel.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -154,6 +154,21 @@
             this.Music.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Music.UseVisualStyleBackColor = true;
             this.Music.Click += new System.EventHandler(this.Music_Click);
+            // 
+            // Tips
+            // 
+            this.Tips.FlatAppearance.BorderSize = 0;
+            this.Tips.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Tips.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Tips.ForeColor = System.Drawing.Color.White;
+            this.Tips.Location = new System.Drawing.Point(3, 334);
+            this.Tips.Name = "Tips";
+            this.Tips.Size = new System.Drawing.Size(163, 79);
+            this.Tips.TabIndex = 3;
+            this.Tips.Text = "Tips";
+            this.Tips.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Tips.UseVisualStyleBackColor = true;
+            this.Tips.Click += new System.EventHandler(this.Tips_Click);
             // 
             // admin_Button
             // 
@@ -540,6 +555,11 @@
             this.difficultyTo_numericUpDown.Font = new System.Drawing.Font("Century Gothic", 8.2F);
             this.difficultyTo_numericUpDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.difficultyTo_numericUpDown.Location = new System.Drawing.Point(524, 186);
+            this.difficultyTo_numericUpDown.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             this.difficultyTo_numericUpDown.Name = "difficultyTo_numericUpDown";
             this.difficultyTo_numericUpDown.Size = new System.Drawing.Size(43, 21);
             this.difficultyTo_numericUpDown.TabIndex = 33;
@@ -709,21 +729,6 @@
             // cATEGORIESTableAdapter
             // 
             this.cATEGORIESTableAdapter.ClearBeforeFill = true;
-            // 
-            // Tips
-            // 
-            this.Tips.FlatAppearance.BorderSize = 0;
-            this.Tips.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Tips.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.Tips.ForeColor = System.Drawing.Color.White;
-            this.Tips.Location = new System.Drawing.Point(3, 334);
-            this.Tips.Name = "Tips";
-            this.Tips.Size = new System.Drawing.Size(163, 79);
-            this.Tips.TabIndex = 3;
-            this.Tips.Text = "Tips";
-            this.Tips.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.Tips.UseVisualStyleBackColor = true;
-            this.Tips.Click += new System.EventHandler(this.Tips_Click);
             // 
             // MainForm
             // 
