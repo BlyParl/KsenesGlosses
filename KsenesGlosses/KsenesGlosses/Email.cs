@@ -62,6 +62,7 @@ namespace KsenesGlosses
             }
             panel_email.BackColor = Color.FromArgb(0, 175, 255);
             email_textbox.ForeColor = Color.FromArgb(0, 175, 255);
+            img_email.Image = Properties.Resources.email_blue;
         }
 
         private void Email_Click(object sender, EventArgs e)
@@ -70,6 +71,9 @@ namespace KsenesGlosses
             {
                 email_textbox.Text = "email";
             }
+            img_email.Image = Properties.Resources.email;
+            panel_email.BackColor = Color.FromArgb(255, 255, 255);
+            email_textbox.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
         private void Send_email_Click(object sender, EventArgs e)
@@ -78,8 +82,11 @@ namespace KsenesGlosses
             {
                 email_textbox.Text = "email";
             }
+            img_email.Image = Properties.Resources.email;
+            panel_email.BackColor = Color.FromArgb(255, 255, 255);
+            email_textbox.ForeColor = Color.FromArgb(255, 255, 255);
 
-            if(Checkemail(email_textbox.Text))
+            if (Checkemail(email_textbox.Text))
             {
 
                 email(sender, e);

@@ -20,35 +20,23 @@ namespace KsenesGlosses
         // gia na kinite to frame
         Point lastPoint;
 
-        private void Close_Click(object sender, EventArgs e)
+        private User user;
+        /// <summary>
+        /// Gets or sets the user that Loged in
+        /// </summary>
+        public User LoggedUser
         {
-            Application.Exit();
-        }
-
-        private void Minimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void Border_MouseMove(object sender, MouseEventArgs e)
-        {
-            //metakinisi tou frame
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
-        }
-
-        private void Border_MouseDown(object sender, MouseEventArgs e)
-        {
-            //apothikeuei to teleuteo simio pou afise to parathiro
-            lastPoint = new Point(e.X, e.Y);
+            get { return user; }
+            set { user = value; }
         }
 
         private void User_Settings_Load(object sender, EventArgs e)
         {
-            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            First_name.Text = user.first_name;
+            Last_name.Text = user.last_name;
+            Username.Text = user.user_name;
+            email.Text = user.email_address;
+
         }
     }
 }

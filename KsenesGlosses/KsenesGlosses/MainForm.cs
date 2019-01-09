@@ -418,6 +418,7 @@ namespace KsenesGlosses
 
         private void Logout_button_Click(object sender, EventArgs e)
         {
+            user = null;
             //create login item
             Login temp = new Login();
             //hide create form
@@ -428,11 +429,17 @@ namespace KsenesGlosses
 
         private void User_Settings_Click(object sender, EventArgs e)
         {
-            //create User Settings item
+            foreach (Control c in this.MainPanel.Controls)
+            {
+                c.Visible = false;
+            }
+
             User_Settings temp = new User_Settings();
-            //hide main form
-            this.Hide();
-            //shows User Settings form
+            temp.LoggedUser = user;// transfer the user info to the other form
+            temp.Dock = DockStyle.Fill;
+            temp.TopLevel = false;
+            //MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(temp);
             temp.Show();
         }
 

@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -20,6 +22,7 @@ namespace KsenesGlosses
 
         // gia na kinite to frame
         Point lastPoint;
+        VocLearningDataSetTableAdapters.USERSTableAdapter usersTableAdapter;
 
         private void Close_Click(object sender, EventArgs e)
         {
@@ -207,16 +210,14 @@ namespace KsenesGlosses
             int min_len=8;
             int min_num=2;
             int min_lett=2;
-            int min_sym=2;
 
             if(Password.Text.Length < min_len)
             {
-                return true;
+                return false;
             }
 
             //Check for Digits, Special Characters and Lower Letters
             int num_count = 0;
-            int sym_count = 0;
             int lett_count = 0;
 
             foreach (char c in Password.Text)
@@ -224,11 +225,6 @@ namespace KsenesGlosses
                 if (char.IsDigit(c))
                 {
                     num_count++;
-                }
-
-                if (Regex.IsMatch(c.ToString(), @"[!#$%&'()*+,-.:;<=>?@[\\\]{}^_`|~]"))
-                {
-                    sym_count++;
                 }
 
                 if (char.IsLower(c))
@@ -239,18 +235,14 @@ namespace KsenesGlosses
 
             if (num_count < min_num)
             {
-                return true;
-            }
-            if (sym_count < min_sym)
-            {
-                return true;
+                return false;
             }
             if (lett_count < min_lett)
             {
-                return true;
+                return false;
             }
 
-            return false;
+            return true;
         }
 
         /// <summary>
@@ -279,12 +271,87 @@ namespace KsenesGlosses
         {
             if (pass_constraint_check())
             {
-                Password.Text = "constraint";
+                int count = (Int32)usersTableAdapter.Create_acc_check(Username.Text, email.Text);
+
+                if (count == 0)
+                {
+                    create_acc();
+                    email_send();
+                    MessageBox.Show("Account created successfully");
+                    
+
+                    //create login item
+                    Login temp = new Login();
+                    //hide create form
+                    this.Hide();
+                    //shows login form
+                    temp.Show();
+                    //new form have the same location
+                    temp.Left = this.Left;
+                    temp.Top = this.Top;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Password must have 8 or more characters\n"+"And Contains at least 2 letters and 2 digits");
+            }
+        }
+
+        private void create_acc()
+        {
+            try
+            {
+                usersTableAdapter.InsertUser(First_name.Text,
+                    Last_name.Text,
+                    Username.Text,
+                    email.Text,
+                    Password.Text);
+
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString());
+            }
+        }
+
+        protected void email_send()
+        {
+            try
+            {
+                var fromAddress = new MailAddress("ksenesglosses1@gmail.com", "From Name");
+                var toAddress = new MailAddress(email.Text, "To Name");
+                const string fromPassword = "a455288!";
+                const string subject = "KsenesGlosses";
+                string body = "Thank you for using KsenesGlosses";
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void Create_acc_Load(object sender, EventArgs e)
         {
+            usersTableAdapter = new VocLearningDataSetTableAdapters.USERSTableAdapter();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
     }

@@ -7622,40 +7622,54 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[5];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[7];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, First_Name, Last_Name, User_Name, Email_Adress, [Password] FROM USERS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            USERS\r\nWHERE        (Email_Adres" +
-                "s = ?)";
+            this._commandCollection[1].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            USERS\r\nWHERE        ([Password] " +
+                "= ?) AND (User_Name = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email_Adress", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email_Adress", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Password", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("User_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_Name", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        First_Name, Last_Name, User_Name, Email_Adress, ID\r\nFROM           " +
-                " USERS\r\nWHERE        (User_Name = ?)";
+            this._commandCollection[2].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            USERS\r\nWHERE        (Email_Adres" +
+                "s = ?)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("User_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email_Adress", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email_Adress", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO `USERS` (`First_Name`, `Last_Name`, `User_Name`, `Email_Adress`, `Pas" +
-                "sword`) VALUES (?, ?, ?, ?, ?)";
+            this._commandCollection[3].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            USERS\r\nWHERE        (User_Name =" +
+                " ?) OR\r\n                         (Email_Adress = ?)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First_Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last_Name", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("User_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_Name", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email_Adress", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email_Adress", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Password", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE       USERS\r\nSET                [Password] = ?\r\nWHERE        (Email_Adress" +
-                " = ?)";
+            this._commandCollection[4].CommandText = "SELECT        First_Name, Last_Name, User_Name, Email_Adress, ID\r\nFROM           " +
+                " USERS\r\nWHERE        (User_Name = ?)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Password", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Email_Adress", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email_Adress", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("User_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "INSERT INTO `USERS` (`First_Name`, `Last_Name`, `User_Name`, `Email_Adress`, `Pas" +
+                "sword`) VALUES (?, ?, ?, ?, ?)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("First_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "First_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Last_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Last_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("User_Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "User_Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email_Adress", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email_Adress", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Password", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "UPDATE       USERS\r\nSET                [Password] = ?\r\nWHERE        (Email_Adress" +
+                " = ?)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Password", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Password", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Email_Adress", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email_Adress", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7687,7 +7701,7 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual VocLearningDataSet.USERSDataTable GetUser(string User_Name) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((User_Name == null)) {
                 throw new global::System.ArgumentNullException("User_Name");
             }
@@ -7926,8 +7940,48 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object Counter_by_email(string Email_Adress) {
+        public virtual global::System.Nullable<int> Count_by_username_password(string Password, string User_Name) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            if ((Password == null)) {
+                throw new global::System.ArgumentNullException("Password");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Password));
+            }
+            if ((User_Name == null)) {
+                throw new global::System.ArgumentNullException("User_Name");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(User_Name));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object Counter_by_email(string Email_Adress) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
             if ((Email_Adress == null)) {
                 throw new global::System.ArgumentNullException("Email_Adress");
             }
@@ -7960,9 +8014,49 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> Create_acc_check(string User_Name, string Email_Adress) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
+            if ((User_Name == null)) {
+                throw new global::System.ArgumentNullException("User_Name");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(User_Name));
+            }
+            if ((Email_Adress == null)) {
+                throw new global::System.ArgumentNullException("Email_Adress");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Email_Adress));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertUser(string First_Name, string Last_Name, string User_Name, string Email_Adress, string Password) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[5];
             if ((First_Name == null)) {
                 throw new global::System.ArgumentNullException("First_Name");
             }
@@ -8015,7 +8109,7 @@ namespace KsenesGlosses.VocLearningDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int Updata_password(string Password, string Original_Email_Adress) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[4];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[6];
             if ((Password == null)) {
                 throw new global::System.ArgumentNullException("Password");
             }
