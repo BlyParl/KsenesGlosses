@@ -198,6 +198,7 @@ namespace KsenesGlosses
             var username = Username.Text;
             var password = Password.Text;
 
+            //check the textboxes
             if (string.IsNullOrEmpty(username) || username.Equals("Username"))
             {
                 MessageBox.Show("Please type your Username");
@@ -227,6 +228,7 @@ namespace KsenesGlosses
 
         }
 
+        //check if user exist in database
         private void CheckLogin(string username, string password)
         {
             try
@@ -270,7 +272,9 @@ namespace KsenesGlosses
 
         private void Login_Load(object sender, EventArgs e)
         {
+            //set icon
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            //user adapter
             usersTableAdapter = new VocLearningDataSetTableAdapters.USERSTableAdapter();
         }
 

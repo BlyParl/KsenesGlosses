@@ -263,6 +263,7 @@ namespace KsenesGlosses
             } 
         }
 
+        //check the constrains and then create acc 
         private void Sing_up_Click(object sender, EventArgs e)
         {
             if (pass_constraint_check() && pass_caps_check())
@@ -294,6 +295,7 @@ namespace KsenesGlosses
             }
         }
 
+        //create acc
         private void create_acc()
         {
             try
@@ -311,6 +313,7 @@ namespace KsenesGlosses
             }
         }
 
+        //send mail when an account is created
         protected void email_send()
         {
             try

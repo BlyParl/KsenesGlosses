@@ -145,6 +145,7 @@ namespace KsenesGlosses
                 if (Password.Text == Con_Password.Text)
                 {
                     usersTableAdapter.Update_password_by_username(Password.Text, Username.Text);
+                    MessageBox.Show("Password changed");
                 }
                 else
                 {

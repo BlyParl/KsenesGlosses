@@ -118,6 +118,12 @@
     <Compile Include="Email.Designer.cs">
       <DependentUpon>Email.cs</DependentUpon>
     </Compile>
+    <Compile Include="Beginners tip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Beginners tip.Designer.cs">
+      <DependentUpon>Beginners tip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMenu\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Beginners tip.resx">
+      <DependentUpon>Beginners tip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="chooseTest.resx">
       <DependentUpon>chooseTest.cs</DependentUpon>

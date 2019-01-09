@@ -74,6 +74,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Close = new System.Windows.Forms.PictureBox();
             this.cATEGORIESTableAdapter = new KsenesGlosses.VocLearningDataSetTableAdapters.CATEGORIESTableAdapter();
+            this.Tips = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MainPanel.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -96,6 +97,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Logout_button);
             this.panel1.Controls.Add(this.Music);
+            this.panel1.Controls.Add(this.Tips);
             this.panel1.Controls.Add(this.admin_Button);
             this.panel1.Controls.Add(this.User_Settings);
             this.panel1.Controls.Add(this.button2);
@@ -708,6 +710,21 @@
             // 
             this.cATEGORIESTableAdapter.ClearBeforeFill = true;
             // 
+            // Tips
+            // 
+            this.Tips.FlatAppearance.BorderSize = 0;
+            this.Tips.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Tips.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Tips.ForeColor = System.Drawing.Color.White;
+            this.Tips.Location = new System.Drawing.Point(3, 334);
+            this.Tips.Name = "Tips";
+            this.Tips.Size = new System.Drawing.Size(163, 79);
+            this.Tips.TabIndex = 3;
+            this.Tips.Text = "Tips";
+            this.Tips.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Tips.UseVisualStyleBackColor = true;
+            this.Tips.Click += new System.EventHandler(this.Tips_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -790,5 +807,6 @@
         private System.Windows.Forms.Label testErrors_label;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Music;
+        private System.Windows.Forms.Button Tips;
     }
 }

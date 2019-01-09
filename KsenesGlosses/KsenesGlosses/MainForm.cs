@@ -585,5 +585,19 @@ namespace KsenesGlosses
                 Music.Image = Properties.Resources.volume_off_indicator;
             }
         }
+
+        private void Tips_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in this.MainPanel.Controls)
+            {
+                c.Visible = false;
+            }
+
+            Beginners_tip tip = new Beginners_tip();
+            tip.Dock = DockStyle.Fill;
+            tip.TopLevel = false;
+            MainPanel.Controls.Add(tip);
+            tip.Show();
+        }
     }
 }

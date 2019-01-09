@@ -56,6 +56,7 @@ namespace KsenesGlosses
 
         private void email_textbox_Click(object sender, EventArgs e)
         {
+            //change color image and text
             if (email_textbox.Text == "email")
             {
                 email_textbox.Text = "";
@@ -67,6 +68,7 @@ namespace KsenesGlosses
 
         private void Email_Click(object sender, EventArgs e)
         {
+            //change color image and text
             if (email_textbox.Text == "")
             {
                 email_textbox.Text = "email";
@@ -78,6 +80,7 @@ namespace KsenesGlosses
 
         private void Send_email_Click(object sender, EventArgs e)
         {
+            //change color image and text
             if (email_textbox.Text == "")
             {
                 email_textbox.Text = "email";
@@ -86,9 +89,10 @@ namespace KsenesGlosses
             panel_email.BackColor = Color.FromArgb(255, 255, 255);
             email_textbox.ForeColor = Color.FromArgb(255, 255, 255);
 
+            //if mail exist on database
             if (Checkemail(email_textbox.Text))
             {
-
+                //sends email
                 email(sender, e);
 
                 MessageBox.Show("Email Send");
