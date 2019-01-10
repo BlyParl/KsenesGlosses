@@ -114,7 +114,7 @@ namespace KsenesGlosses
         private void TranslationTestForm_Load(object sender, EventArgs e)
         {
             
-            test = Test.createRandomTest(nofq, 2, 4, "", languegeYouKnow, languegeToLearn); //create a test 
+            test = Test.createRandomTest(nofq, 0, 4, "", languegeYouKnow, languegeToLearn); //create a test 
 
             progressBar1.Maximum = nofq-1;
 
@@ -126,7 +126,7 @@ namespace KsenesGlosses
 
             previousButton.Enabled = false; //disable the previus button at the start 
 
-            testTaken = new TestTaken(test, user, answers,"Translation", 0);  //create testtake to do the work for the answers 
+            testTaken = new TestTaken(test, user, answers,"Translation", 0);  //create testtaken to do the work for the answers 
 
            if(languegeYouKnow!="English")
             {
@@ -171,6 +171,22 @@ namespace KsenesGlosses
             previousButton.Enabled = false;
             doneButton.Enabled = false;
             testTaken.postTestTaken();//here we post the results in the DB
+
+            //update USER_PROFILE table
+            try
+            {
+
+                VocLearningDataSetTableAdapters.USER_PROFILETableAdapter UserProfileTableAdapter = new VocLearningDataSetTableAdapters.USER_PROFILETableAdapter();
+                int RatioScore = testTaken.getTotalCorrectAnswers() / (testTaken.getTotalWrongAnswers() + testTaken.getTotalCorrectAnswers()); // pososto swstwn apanthsewn
+                UserProfileTableAdapter.UpdateUserProfile(testTaken.getTotalCorrectAnswers(),testTaken.getTotalWrongAnswers(),RatioScore);
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message + "smthing wrong  here");
+
+            }
+
         }
 
         private void speakButton_Click(object sender, EventArgs e)
