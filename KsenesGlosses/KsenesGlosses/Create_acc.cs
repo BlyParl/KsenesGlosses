@@ -266,32 +266,56 @@ namespace KsenesGlosses
         //check the constrains and then create acc 
         private void Sing_up_Click(object sender, EventArgs e)
         {
-            if (pass_constraint_check() && pass_caps_check())
+            if (IsValidEmail(email.Text))
             {
-                int count = (Int32)usersTableAdapter.Create_acc_check(Username.Text, email.Text);
-
-                if (count == 0)
+                if (pass_constraint_check() && pass_caps_check())
                 {
-                    create_acc();
-                    email_send();
-                    MessageBox.Show("Account created successfully");
-                    
+                    int count = (Int32)usersTableAdapter.Create_acc_check(Username.Text, email.Text);
 
-                    //create login item
-                    Login temp = new Login();
-                    //hide create form
-                    this.Hide();
-                    //shows login form
-                    temp.Show();
-                    //new form have the same location
-                    temp.Left = this.Left;
-                    temp.Top = this.Top;
+                    if (count == 0)
+                    {
+                        create_acc();
+                        email_send();
+                        MessageBox.Show("Account created successfully");
+
+
+                        //create login item
+                        Login temp = new Login();
+                        //hide create form
+                        this.Hide();
+                        //shows login form
+                        temp.Show();
+                        //new form have the same location
+                        temp.Left = this.Left;
+                        temp.Top = this.Top;
+                    }
+                    if (count == 1)
+                    {
+                        MessageBox.Show("Email or Username already exist");
+                    }
+
                 }
-
+                else
+                {
+                    MessageBox.Show("Password must have 8 or more characters\n" + "And Contains at least 2 lower case letters and 2 digits and no upper case letters");
+                }
             }
             else
             {
-                MessageBox.Show("Password must have 8 or more characters\n"+"And Contains at least 2 lower case letters and 2 digits and no upper case letters");
+                MessageBox.Show("Invalid email");
+            }
+        }
+
+        public bool IsValidEmail(string email)
+        {
+            try
+            {
+                var mail = new System.Net.Mail.MailAddress(email);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
 

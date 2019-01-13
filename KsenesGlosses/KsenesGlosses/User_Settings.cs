@@ -167,34 +167,54 @@ namespace KsenesGlosses
         {
             if (email.Text != "" && First_name.Text != "" && Last_name.Text != "")
             {
-                int count = (Int32)usersTableAdapter.Counter_by_email(email.Text);
-                if (count == 1 && email.Text != user.email_address)
+                if (IsValidEmail(email.Text))
                 {
-                    MessageBox.Show("This email already exist");
+                    int count = (Int32)usersTableAdapter.Counter_by_email(email.Text);
+                    if (count == 1 && email.Text != user.email_address)
+                    {
+                        MessageBox.Show("This email already exist");
+                    }
+                    else
+                    {
+                        if (email.Text != user.email_address)
+                        {
+                            usersTableAdapter.Update_email_by_username(email.Text, Username.Text);
+                            user.email_address = email.Text;
+                        }
+                        if (First_name.Text != user.first_name)
+                        {
+                            usersTableAdapter.Update_firstname_by_username(First_name.Text, Username.Text);
+                            user.first_name = First_name.Text;
+                        }
+                        if (Last_name.Text != user.last_name)
+                        {
+                            usersTableAdapter.Update_lastname_by_username(Last_name.Text, Username.Text);
+                            user.last_name = Last_name.Text;
+                        }
+                        MessageBox.Show("Change Saved");
+                    }
                 }
                 else
                 {
-                    if (email.Text != user.email_address)
-                    {
-                        usersTableAdapter.Update_email_by_username(email.Text, Username.Text);
-                        user.email_address = email.Text;
-                    }
-                    if (First_name.Text != user.first_name)
-                    {
-                        usersTableAdapter.Update_firstname_by_username(First_name.Text, Username.Text);
-                        user.first_name = First_name.Text;
-                    }
-                    if (Last_name.Text != user.last_name)
-                    {
-                        usersTableAdapter.Update_lastname_by_username(Last_name.Text, Username.Text);
-                        user.last_name = Last_name.Text;
-                    }
-                    MessageBox.Show("Change Saved");
+                    MessageBox.Show("Invalid email");
                 }
             }
             else
             {
                 MessageBox.Show("Some field is empty!");
+            }
+        }
+
+        public bool IsValidEmail(string email)
+        {
+            try
+            {
+                var mail = new System.Net.Mail.MailAddress(email);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
 

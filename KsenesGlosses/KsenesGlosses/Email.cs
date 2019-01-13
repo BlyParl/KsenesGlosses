@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -89,14 +90,36 @@ namespace KsenesGlosses
             panel_email.BackColor = Color.FromArgb(255, 255, 255);
             email_textbox.ForeColor = Color.FromArgb(255, 255, 255);
 
-            //if mail exist on database
-            if (Checkemail(email_textbox.Text))
+
+            if (IsValidEmail(email_textbox.Text))
             {
-                //sends email
-                email(sender, e);
+                //if mail exist on database
+                if (Checkemail(email_textbox.Text))
+                {
+                    //sends email
+                    email(sender, e);
 
-                MessageBox.Show("Email Send");
+                    MessageBox.Show("Email Send");
 
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid email");
+            }
+
+        }
+
+        public bool IsValidEmail(string email)
+        {
+            try
+            {
+                var mail = new System.Net.Mail.MailAddress(email);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
 
